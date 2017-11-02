@@ -1,0 +1,66 @@
+html{font-size: 625%;}
+body{font-size: 0.14rem;}
+body{position:relative;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;height:auto!important;height:100%;font-size:.14rem;font-family:PingFangSC-Regular;-webkit-overflow-scrolling:touch;overflow-scrolling:touch;min-heigth:100%;}
+div,ul,li{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+dd,dl,dt,ol,ul{margin:0;padding:0}
+ol li,ul li{list-style:none}
+p{margin:0;padding:0}
+img{ display: block;width:100%;}
+.clearfloat{zoom:1}
+.clearfloat::after{clear:both;display:block;overflow:hidden;height:0;content:""}
+.clearFloat{overflow:hidden}
+.img-allwidth{overflow:hidden;width:100%;position: relative;}
+.pos-re{  position: absolute;bottom:0;width:100%;padding:0 0.12rem; display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -o-box;
+    display: box;
+    display: -webkit-flex;display:flex;z-index:999; }
+.pos-re a{width:31.8%;justify-content:center;margin-right:1.5%;}
+.pos-re a:nth-of-type(3){margin-right:0;}
+.pos-re img{display: block;width:100%;vertical-align:bottom;}
+.fullcut{ background:linear-gradient(to bottom ,#A738EB 0% ,#943DF8 10% ,#943DF8 100% );padding:3.2%;}
+.poUp{ position: absolute;top:-0.66rem;left:50%;width:83.3%;margin-left: -41.6%;}
+.hasUD-margin{ position: relative;border-radius: 20px 20px 0 0;}
+.hasUD-margin ul{padding:0.5rem 0.05rem 0.05rem 0.05rem;}
+.hasUD-margin ul li{margin-bottom:0.05rem;}
+.p-content{line-height:0.225rem;font-size: 0.16rem;color: #D2131B;}
+.gobuy{width:100%;height:0.24rem;line-height: 0.24rem;margin-top:0.1rem;font-size:0.16rem;background: #D2131B;text-align: center;
+    border-radius: 4px;color:#fff;font-weight:normal;}
+/* .hasUD-margin .detailcon{padding:0 0.05rem;} */
+.pricewrap{padding-top:0.75rem;}
+.priceRe{background: #BB66F8;}
+.pricecoinwrap{ padding-top:0.89rem;}
+.pricecoinRe{background: #2E64FF;}
+.coinwrap{ padding-top:0.89rem;}
+.coinRe{background: #FF7A99;}
+.title{line-height:0.2rem;font-size: 0.14rem;color: #030303;width:100%; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;margin-top:0.075rem;}
+.rule{ width:100%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;color: #1D1D1D;font-size:0.11rem;margin-top:0.075rem;}
+.manjian{ display: inline-block;margin-right:0.03rem; padding: 0.01rem 0.015rem; background: #D02B3A;color:#fff;text-align: center; border-radius:0.02rem;}
+.cutbottom{padding-top:0.1rem;}
+
+/*  现金专区  */
+.priceRe ul li{width:49.25%;background-size: cover;cursor: pointer;background: #E7C9FD;float:left;padding-bottom:0.07rem;padding:0.05rem;}
+.priceRe ul li:nth-child(4n+3){margin-right:1.5%;}
+.priceRe ul li:nth-child(4n+1) .imgbox{float:left;width:41.8%;}
+.priceRe ul li:nth-child(4n+2) .imgbox{float:right;width:41.8%;}
+.priceRe ul li:nth-child(4n+1),.priceRe ul li:nth-child(4n+2){width:100%;}
+.priceRe ul li .gobuy{display:none;width:1.23rem;}
+.priceRe ul li:nth-child(4n+1) .detailcon{ float:left;width:58%;padding-left:3%;}
+.priceRe ul li:nth-child(4n+2) .detailcon{float:right;width:58%;padding-right:3%;}
+.priceRe ul li:nth-child(4n+1) .p-content,.priceRe ul li:nth-child(4n+2) .p-content,.priceRe ul li:nth-child(4n+1) .title,.priceRe ul li:nth-child(4n+2) .title{margin-top:0.05rem;}
+.priceRe ul li:nth-child(4n+1) .gobuy,.priceRe ul li:nth-child(4n+2) .gobuy{display:block;}
+/*  现金购物币专区  */
+.pricecoinRe ul li{width:49.25%;float:left;background: #EAEFFF;padding:0.05rem;}
+.pricecoinRe ul li:nth-child(3n+1){margin-right:1.5%;}
+.pricecoinRe ul li:nth-child(3n+3){width:100%;}
+.pricecoinRe ul li:nth-child(3n+3) .imgbox{float:left;width:41.8%;}
+.pricecoinRe ul li:nth-child(3n+3) .detailcon{float:left;width:58%;padding-left:3%;}
+.pricecoinRe ul li:nth-child(3n+3) .gobuy{width:76.8%;}
+.pricecoinRe ul li:nth-child(3n+3) .p-content{margin-top:0.05rem;}
+/* .pricecoinRe ul li:nth-child(3n+1) .rule,.pricecoinRe ul li:nth-child(3n+2) .rule{ display:none;} */
+/*  购物币专区  */
+.coinRe ul li{width:50%;float:left;background: #FBDEE5;padding:0.05rem 0.075rem 0.145rem 0.05rem;}
+/* .coinRe ul li .rule{display:none;} */
+
+.toTop{width:auto;position:fixed;right:.15rem;bottom:.5rem;display:none;z-index:999;}
