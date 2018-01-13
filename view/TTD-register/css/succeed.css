@@ -1,0 +1,36 @@
+#content {
+    width: 80%;
+    margin: 16.9% auto 0;
+    text-align: center;
+}
+
+.bargain {
+    display: none;
+}
+
+.iSucceed {
+    font-size: 15px;
+    color: #1C1C1C;
+}
+
+#register {
+    background: #FFD006;
+    border-radius: 100px;
+    width: 80%;
+    margin: 9.7% auto;
+    height: 44px;
+    line-height: 44px;
+    text-decoration: none;
+}
+
+#register a {
+    text-decoration: none;
+    color: #1C1C1C;
+    font-size: 18px;
+}
+
+.tip {
+    opacity: 0.6;
+    font-size: 13px;
+    color: #18253D;
+}

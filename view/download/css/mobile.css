@@ -1,0 +1,181 @@
+    .top{
+        width: 100%;
+        height: 100%;
+        border-right: 0px;
+        padding-left: 0;
+        text-align: center;
+        overflow: hidden;
+        -webkit-transform: skew(0deg, 0deg);
+        -moz-transform: skew(0deg, 0deg);
+        -ms-transform: skew(0deg, 0deg);
+        -o-transform: skew(0deg, 0deg);
+    }
+    .top img{
+        visibility: hidden;
+        display:inline;
+        -webkit-transform: skew(0deg, 0deg);
+        -moz-transform: skew(0deg, 0deg);
+        -ms-transform: skew(0deg, 0deg);
+        -o-transform: skew(0deg, 0deg);
+    }
+
+    .part1,.part2,.part3,.part4,.part5,.part6,#copyright{
+        width: 100%;
+        text-align: center;
+        -webkit-box-shadow: 1px 1.5px 10px rgba(0, 0, 0, 0.5) inset;
+        -o-box-shadow: 1px 1.5px 10px rgba(0, 0, 0, 0.5) inset;
+        -moz-box-shadow: 1px 1.5px 10px rgba(0, 0, 0, 0.5) inset;
+        box-shadow: 1px 1.5px 10px rgba(0, 0, 0, 0.5) inset;
+    }
+
+
+    #topimg5{
+        margin-left: 0px;
+        float: none;
+    }
+    .buttom{
+        width: 100%;
+        background-size: cover;
+        position: absolute;
+    }
+
+    .part1_left{
+        display: none;
+    }
+    .part1_right{
+        display: inline;
+        height: 100%;
+        width: 100%;
+    }
+    .middle_hide{
+        display: none;
+    }
+    .part1_right_top{
+        width: 50%;
+        height: 22%;
+    }
+    .part1_right_top img{
+        display: none;
+    }
+    .part1_right_middle{
+        width: 100%;
+        height: 32%;
+    }
+    .part1_right_middle_smallcloud{
+        display: none;
+    }
+    .part1_right_bottom{
+        width: 100%;
+        height: 33%;
+    }
+    .part1_right_bottom_left{
+        display: none;
+    }
+    .part1_right_bottom_right{
+        width: 100%;
+        height: 100%;
+        background-image: url("../images/erweima.png");
+        background-size: cover;
+        visibility: hidden;
+    }
+
+    .part2_left{
+        width: 100%;
+        text-align: right;
+    }
+    .part2_right,.part2_left_top,.part2_left_center_fonthide{
+        display: none;
+    }
+    .part2_left_center{
+        height: 67%;
+        padding-top: 8%;
+    }
+    .part2_left_bottom{
+        height: 33%;
+        text-align: center;
+    }
+    .part2_left_center_left,.part2_left_center_right{
+        float: left;
+    }
+    .part2_left_center_left{
+        display: none;
+    }
+    .part2_left_center_right{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+
+    .part3_right{
+        width: 100%;
+        padding-top: 0%;
+        padding-right: 0%;
+    }
+    .part3_left{
+        display: none;
+    }
+    .part3_right_center_br2{
+        display: none;
+    }
+    .part3_right_center_br1,.part3_right_center_br3{
+        display: inline;
+    }
+
+    .part3_right_top{
+        display: none;
+    }
+    .part3_right_center{
+        padding-top: 7%;
+        height: 60%;
+    }
+    .part3_right_bottom{
+        height: 35%;
+    }
+
+    .part4_left{
+        width: 100%;
+        padding-left: 0%;
+    }
+    .part4_right{
+        display: none;
+    }
+    .part4_left_top{
+        display: none;
+    }
+    .part4_left_center{
+        padding-top: 7%;
+        height: 65%;
+    }
+    .part4_left_bottom{
+        height: 35%;
+    }
+
+    .part5_right_center_br1{
+        display: inline;
+    }
+    .part5_right_center_br2{
+        display: none;
+    }
+    .part5_left{
+        display: none;
+    }
+    .part5_right{
+        width: 100%;
+        padding-right: 0%;
+    }
+    .part5_right_top{
+        display: none;
+    }
+    .part5_right_center{
+        padding-top: 9%;
+        height: 65%;
+    }
+    .part5_right_bottom{
+        height: 35%;
+    }
+    .part6_left{
+        width: 10%;
+    }
+    .part6_content{
+        width: 80%;
+    }

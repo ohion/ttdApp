@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no, adress=no">
+    <link rel="stylesheet" href="css/index.css">
+
+    <title>积分商城</title>
+  </head>
+  <script type="text/javascript">
+    !(function(){
+      window.addEventListener('resize', function(){
+        getFont();
+      });
+      getFont();
+      function getFont(){
+        var deviceWidth = document.documentElement.clientWidth || document.body.clientWidth;
+        document.documentElement.style.fontSize = deviceWidth / 3.75 +'px';
+      }
+    }())
+  </script>
+  <body>
+    <div class="wrap">
+
+      <!-- 搜索 -->
+      <div class="search hide">
+        <form>
+          <img src="images/icon-search.png"/>
+          <input type="text" placeholder="搜索您需要的商品" disabled/>
+        </form>
+      </div>
+
+      <!-- 主体 -->
+      <div class="main">
+        <!-- 头部 -->
+        <div class="header bp">
+          <div class="header-detail">
+            <div><img data-sortId="[1547]" data-name="智能数码" src="images/icon-digit.png"/></div>
+            <ul class="cf">
+              <li><div><img data-sortid="[838]" data-name="特色男装" src="images/icon-mensCloth.png"/></div></li>
+              <li><div><img data-sortid="[2646]" data-name="香水彩妆" src="images/icon-perfume.png"/></div></li>
+              <li><div><img data-sortid="[1953]" data-name="厨房家电" src="images/icon-electrical.png"></div></li>
+              <li><div><img data-sortid="[585]" data-name="特色女装" src="images/icon-wocloth.png"/></div></li>
+              <li><div><img data-sortid="[1914,1659,1125]" data-name="潮流鞋包" src="images/icon-fashionBag.png"/></div></li>
+              <li><div><img data-sortid="[2026]" data-name="时尚男包" src="images/icon-fashMenBag.png"/></div></li>
+            </ul>
+          </div>
+        </div>
+        <div class="content">
+          <!-- 爆款来袭 -->
+          <div class="section">
+            <div class="tit"><img src="images/icon-hot.png"/></div>
+            <div class="bp hot-contentIn">
+                <div class="hot-bg">
+	                <img class="back" src="images/icon-hot-1.png"/>
+	            	<img class="back" src="images/icon-hot-2.png"/>
+	            	<img class="back" src="images/icon-hot-3.png"/>
+                </div>
+            	<div class="hot-content jsHot">
+	                
+	                <!-- <div class="content-box">
+	                  <div><img src="images/tst.jpg"/></div>
+	                  <div>
+	                    <p class="names">艺听PB5单晶铜艺听PB5单晶铜 hd700 hd700</p>
+	                    <div class="pb-box">
+	                   <p class="price">￥6666.66</p>
+	                   <button type="button" name="button">+积分999</button>
+	                    </div>
+	                  </div>
+	                </div> -->
+	                
+            	</div>
+	            
+                
+            </div>
+
+          </div>
+
+          <!-- 新品推荐 -->
+          <div class="section new-pdct">
+            <div class="tit"><img src="images/icon-new.png"/></div>
+            <div class="">
+              <div class="nav">
+                <ul class="cf jsNewNav">
+                  <!-- <li class="active">分类一</li>
+                  <li>分类二</li>
+                  <li>分类三</li>
+                  <li>分类四</li>
+                  <li>分类五</li>
+                  <li>分类六</li> -->
+                </ul>
+              </div>
+              <div class="pdct-content jsNewContent">
+                <!-- <div class="show">
+                
+                  <div class="content-box">
+                    <div><img src="images/tst.jpg"/></div>
+                    <div>
+                      <p class="names">艺听PB5单晶铜艺听PB5单晶铜 hd700 hd700</p>
+                      <p class="price">￥6666.66</p>
+                      <button type="button" name="button">+积分999</button>
+                    </div>
+                  </div>
+                  
+                </div> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- 精选大牌 -->
+          <div class="section best-pdct">
+            <div class="tit"><img src="images/icon-best.png"/></div>
+            <div class="best-content jsBestContent">
+            
+              <!-- <div class="best-contentIn">
+                <div class="best-cover"><img src="images/123.webp"/></div>
+                <div>
+                  <div class="content-wrap">
+                    <div class="cf">
+	                    
+	                    <div class="content-box">
+	                      <div><img src="images/tst.jpg"/></div>
+	                      <div>
+	                        <p class="names">艺听PB5单晶铜艺听PB5单晶铜 hd700 hd700</p>
+	                        <div class="pb-box">
+		                        <p class="price">￥6666.66</p>
+		                        <button type="button" name="button">+积分999</button>
+	                        </div>
+	                      </div>
+	                    </div>
+	                    
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+              
+            </div>
+          </div>
+
+          <!-- 猜你喜欢 -->
+          <div class="section like-pdct">
+            <div class="tit"><img src="images/icon-like.png"/></div>
+            <div class="cf jsLikeContent">
+
+            </div>
+          </div>
+
+          <!-- 已经到最后了 -->
+          <div class="footers">
+            <p class="footer">- 已经到最后啦 -</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 提示 -->
+	<div class="pop">
+      <div class="mask"></div>
+	  <div class="pop-content">
+	    <div class="img-box"><img class="pop-close" src="images/chacha.png"/><img src="images/arrow.png"/></div>
+	    <p>1. 点击右上角的 按钮</p>
+	    <p>2. 选择"<span class="brower-name"></span>"即可前往</p>
+	  </div>
+	</div>
+	
+    <script src="../libjs/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

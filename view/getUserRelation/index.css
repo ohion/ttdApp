@@ -1,0 +1,28 @@
+body{
+    text-align: center;
+    margin: 0;
+}
+table{
+    font-size: 1.3em;
+    display: none;
+}
+span{
+    font-size: 1.5em;
+}
+#phone{
+    height: 1.5em;
+    margin: 0 1em;
+}
+#search{
+    height: 2em;
+}
+.table-header{
+    background-color: gray;
+    color: white;
+}
+#search-result-box{
+    display: none;
+}
+#search-result-box p:first-child{
+    margin-top: 3em;
+}

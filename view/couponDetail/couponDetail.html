@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>商品券详情</title>
+    <style>
+        html { font-size: 100px; padding: 0;}
+        body { font-size: 12px; margin: 0; padding: 0;}
+        html, body, .wrap, .box { height: 100%; width: 100%; background: #E6E5EC; }
+        p { margin: 0;}
+        .line-bottom { border-bottom: 1px solid #DFDEE7; }
+        /*清除浮动*/
+        .clearFloat:after { zoom: 1; content: ''; display: block; clear: both; }
+        /* 高度坍塌 */
+        .clearHeight:before { content: ''; display: table; }
+        .box > div { width: 100%; padding-left: 0.12rem; margin-bottom: 0.08rem; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; background: #fff; }
+        .wrap { display: none; }
+        /* 封面 */
+        .cover { padding-left: 0 !important; }
+        .cover .cover-imgBox { width: 100%; coverflow: hidden; }
+        .cover-imgBox img { width: 100%; }
+        .cover .content { font-size: 0.14rem; color: #1c1c1c; }
+        .cover .price { font-size: 0.18rem; line-height: 0.36rem; }
+        .cover .content-box { padding: 0.04rem 0 0.04rem 0.12rem; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+        .cover .sales-volume { line-height: 0.385rem; margin-left: 0.12rem; color: rgba(28, 28, 28, .6); }
+        .content-box img { height: 0.14rem; margin: 0 0.02rem; }
+        /* 地址及联系方式 */
+        .contact-number .contact-tit { float: left; position: relative; padding-top: 0.11rem; font-size: 0.18rem; }
+        .contact-number .contact-tit:before { content: ''; background-image: url(images/icon-shpLogo.png); background-repeat: no-repeat; background-size: 100%; position: absolute; width: 0.18rem; height: 0.2rem; left: -0.25rem; top: 0.145rem; }
+        .contact-number .contact-tit:after { content: ''; background-image: url(images/icon-arrowRight.png); background-repeat: no-repeat; background-size: 100%; position: absolute; width: 0.07rem; height: 0.2rem; right: -0.16rem; top: 0.19rem; }
+        .contact-number, .contact-address { margin-left: 0.25rem; }
+        .contact-number .contact-nub { float: right; width: 0.4rem; height: 0.49rem; background: #FFD006; background-image: url(images/icon-phone.png); background-repeat: no-repeat; background-position: center; background-size: 0.16rem; }
+        .contact-nub:focus { outline: none;}
+        .contact-address { position: relative; font-size: 0.15rem; padding: 0.1rem 0; margin-right: 0.2rem; }
+        .contact-address:before { content: ''; position: absolute; width: 0.18rem; height: 0.2rem; left: -0.25rem; top: 0.13rem; background-image: url(images/icon-gps.png); background-repeat: no-repeat; background-size: 100%; }
+        .contact-address:after { content: ''; position: absolute; width: 0.07rem; height: 0.2rem; right: -0.08rem; top: 0.16rem; background-image: url(images/icon-arrowRight.png); background-repeat: no-repeat; background-size: 100%; }
+        /* 内容介绍 */
+        .introduce-tit, .note-tit { line-height: 0.35rem; font-size: 0.15rem; color: rgba(28, 28, 28, .6); }
+        .introduce-detail { position: relative; padding: 0.11rem 0.12rem 0.16rem 0; font-size: 0.13rem; }
+        .introduce-main { line-height: 1.5; }
+        .introduce-details { position: relative; font-size: 0.13rem; color: #ff4848; text-align: center; line-height: 0.35rem; }
+        .lines { position: absolute; left: 0; width: 100%; height: 1px; background: #DFDEE7; }
+
+        /* 购买须知 */
+        .note-detail p { font-size: 0.15rem; color: #FF4848; margin: 0.04rem 0; }
+        .note-detail ul { padding-left: 15px; margin: 0; font-size: 0.13rem; color: rgba(0, 0, 0, .6); text-align: justify; }
+        .note-detail li { padding-bottom: 0.12rem; }
+        .note-detail { margin: 0.1rem 0.12rem 0 0; }
+
+        /* 评价 */
+        .comment-starBox li { float: left; width: 0.16rem; height: 0.16rem; margin-right: 0.06rem; list-style: none; background-image: url(images/icon-star.png); background-repeat: no-repeat; background-size: 100% }
+        .comment-starBox li.active { background-image: url(images/icon-stared.png); }
+        .comment-starBox li.activef { background-image: url(images/icon-starharf.png); }
+        .comment-starBox ul { margin: 0; padding: 0; }
+        .comment-starBox { height: 0.4rem; padding-top: 0.12rem; padding-right: 0.21rem; color: rgba(0, 0, 0, .6); font-size: 0.13rem; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+        .comment-sco { position: absolute; -webkit-transform: translate3d(0, -0.05rem, 0); -moz-transform: translate3d(0, -0.04rem, 0); transform: translate3d(0, -0.04rem, 0); color: #FF3838; font-size: 0.18rem; }
+        .comment-num { float: right; position: relative; margin-right: 0.07rem; background: rgba(255,255,255,0); border: none; outline: none; }
+        .comment-num:after { content: ''; position: absolute; width: 0.07rem; height: 0.2rem; right: -0.15rem; top: 0.03rem; background-image: url(images/icon-arrowRight.png); background-repeat: no-repeat; background-size: 100%; }
+
+        .comment-user { width: 0.3rem; height: 0.3rem; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; border: 1px solid #DFDEE7; }
+        .comment-user img { width: 100%; }
+        .comment-user, .comment-persons { float: left; }
+        .comment-person { position: relative; transform: translate3d(-0.35rem, 0, 0); }
+        .comment-persons { margin-top: 0.06rem; }
+        .comment-content { padding: 0.08rem 0.12rem 0.12rem 0.35rem; }
+        .comment-name { font-size: 0.15rem; margin-left: 0.04rem; }
+        .comment-date { float: right; margin-right: -0.32rem; line-height: 0.3rem; color: rgba(0, 0, 0, .6);}
+        .comment-main { font-size: 0.13rem; margin: 0.08rem 0 0.04rem 0; word-wrap: break-word;  }
+        .line2 { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+        .comment-img { width: 0.6rem; height: 0.6rem; float: left; margin-left: 0.04rem; }
+        .comment-img img { width: 100%; }
+        /* 查看全部评论 */
+        .comment-all { width: 1.265rem; height: 0.3rem; border: 1px solid #FF4848; text-align: center; color: #FF4848; line-height: 0.3rem; -webkit-border-radius: 0.165rem; -moz-border-radius: 0.165rem; border-radius: 0.165rem; font-size: 0.13rem; margin: 0.08rem 1.12rem; background: rgba(255,255,255,0); }
+        .comment-all.active { border-color: #7F7F7F; color: #7F7F7F; }
+        .comment { padding-bottom: 0.01rem;}
+        /*立即购买*/
+        .buyNow { width: 100%; height: 0.52rem; position: fixed; bottom: 0; text-align: center; color: #fff; background: #FF4848 !important; font-size: 0.18rem; line-height: 0.52rem; }
+
+        /* 查看所有用户评论 */
+        .comment-allDetail { background: #fff; }
+        .comment-starAll { position: fixed; top: 0; z-index: 1000; width: 100%; height: 0.755rem; background: #fff; text-align: center; }
+        .comment-starAll li { float: left; width: 0.225rem; height: 0.225rem; margin-right: 0.12rem; list-style: none; background-image: url(images/icon-star.png); background-repeat: no-repeat; background-size: 100% }
+        .comment-starAll ul { margin: 0.12rem 0 0.08rem 1.075rem; padding: 0; }
+        .comment-starAll li.active { background-image: url(images/icon-stared.png); }
+        .comment-starAll li.activef { background-image: url(images/icon-starharf.png); }
+        .commentAll-sco { color: #FF3838; font-size: 0.18rem; }
+        .comment-allDetail .comment-contentBox { margin-top: 0.75rem; padding-left: 0.12rem; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+        #container { height: 100%; width: 100%; overflow: scroll;  display: none; }
+        /* 图文详情 */
+        .pd-detail { width: 100%; display: none; }
+        .pd-detail img { display: block; width: 100%; }
+
+        /**/
+        .wrap.active, #container.active, .pd-detail.active, .map-contain.active { display: block;}
+        body.active { background: #fff; }
+        /* 地图 */
+        .map-contain { width: 100%; height: 100%; display: none;}
+        /* 已经没有更多评论了 */
+        .comment-loadAll { display: none; background: #dfdee7; height: 35px; color: #000; font-size: 15px; text-align: center; padding-top: 12px;}
+        .comment-loadAll.active { display: block; }
+
+        /*提示样式*/
+        #shadowTips {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            z-index: 999999999;
+        }
+        .shadowTips_top {
+            width: 100%;
+            height: 2%;
+        }
+        .shadowTips_mid {
+            width: 100%;
+            height: 20%;
+        }
+        .shadowTips_mid_left {
+            float: left;
+            width: 50%;
+            height: 100%;
+            padding-left: 5%;
+            text-align: left;
+        }
+        .shadowTips_mid_right {
+            float: right;
+            width: 45%;
+            height: 100%;
+            text-align: right;
+        }
+        .shadowTips_bottom_tipsone,
+        .shadowTips_bottom_tipstwo {
+            width: 100%;
+            height: 10%;
+            font-size: 20px;
+            padding-left: 0%;
+        }
+        .shadowTips_bottom_tipsone img {
+            border-radius: 10px;
+        }
+        /**/
+        .shims { width: 100%; height: 0.72rem; visibility: hidden; }
+    </style>
+</head>
+<body class="">
+<script>
+    // rem 配置
+    window.addEventListener('resize', function(){
+        setFont();
+    });
+    function setFont(){
+        var deviceWidth = document.documentElement.clientWidth || document.body.clientWidth;
+        if(deviceWidth > 640){
+            deviceWidth = 640;
+        }
+        document.documentElement.style.fontSize = deviceWidth / 3.75 + 'px'
+    }
+    setFont();
+</script>
+<script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
+<script src="http://webapi.amap.com/maps?v=1.3&key=d7918df5144f6581c70b3e99bbc94da5"></script>
+<script src="../common/jquery-2.1.4.min.js"></script>
+
+<div class="wrap active">
+    <div class="box">
+        <!-- 封面 -->
+        <div class="cover">
+            <div class="cover-imgBox clearFloat">
+                <img src="#">
+            </div>
+            <div class="content-box line-bottom">
+                <p class="content"></p>
+                <p class="price"><span class="prices"></span><img src="#"><span class="coin"></span></p>
+            </div>
+            <span class="sales-volume"></span>
+        </div>
+        <!-- 地址及联系方式 -->
+        <div class="contacts">
+            <div class="contact-number line-bottom clearFloat">
+                <!-- 店铺名称 -->
+                <div class="contact-tit js-buDetail"></div>
+                <!-- 店铺电话 -->
+                <a  class="contact-nub" href="#"></a>
+            </div>
+            <!-- 店铺地址 -->
+            <div class="contact-address js-address"></div>
+        </div>
+        <!-- 内容介绍 -->
+        <div class="introduces">
+            <div class="introduce-tit line-bottom">内容介绍</div>
+            <div class="introduce-detail clearFloat">
+                <p class="introduce-main"></p>
+            </div>
+            <div class="lines"></div>
+            <div class="introduce-details">
+                <span class="js-detail">图文详情 &gt;</span>
+            </div>
+        </div>
+        <!--购买须知-->
+        <div class="notes">
+            <div class="note-tit line-bottom">购买须知</div>
+            <div class="note-detail clearHeight">
+                <!-- 有效期 -->
+                <div>
+                    <p>有效期</p>
+                    <ul>
+                        <li class="expireTime"></li>
+                    </ul>
+                </div>
+                <!-- 不可用日期 -->
+                <div class="canot">
+                    <p>不可用日期</p>
+                    <ul>
+                        <li></li>
+                    </ul>
+                </div>
+                <!-- 使用时间 -->
+                <div>
+                    <p>使用时间</p>
+                    <ul>
+                        <li class="utime"></li>
+                    </ul>
+                </div>
+                <!-- 使用规则 -->
+                <div>
+                    <p>使用规则</p>
+                    <ul class="law"></ul>
+                </div>
+            </div>
+        </div>
+        <!-- 评价 -->
+        <div class="comment">
+            <div class="comment-star">
+                <div class="comment-starBox line-bottom">
+                    <ul class="">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <span class="comment-sco js-sco"></span>
+                    <button class="comment-num js-commentAll"></button><!-- 评论总数 -->
+                </div>
+            </div>
+            <div class="comment-contentBox comment-part">
+
+            </div>
+            <button class="comment-all js-commentAll">查看全部评论</button>
+        </div>
+        <!--  -->
+        <div class="shims"></div>
+    </div>
+    <!-- 立即购买 -->
+    <div class="buyNow">
+        立即购买
+    </div>
+</div>
+
+<!-- 图文详情 -->
+<div class="pd-detail"></div>
+
+<!-- 用户评价 -->
+<div id="container">
+    <div class="comment-allDetail">
+        <div class="comment-starAll line-bottom clearHeight">
+            <ul class="clearFloat">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="commentAll-sco js-sco"></div>
+        </div>
+        <div class="comment-contentBox comment-alls">
+            <!--  全部评论内容 -->
+        </div>
+        <div class="comment-loadAll">- 已经没有更多评论了 -</div>
+    </div>
+</div>
+
+<!-- 地图 -->
+<div id="map-contain" class="map-contain"></div>
+
+<!-- 提示 -->
+<div id="shadowTips">
+    <div class="shadowTips_top"></div>
+    <div class="shadowTips_mid">
+        <div class="shadowTips_mid_left"><img src="./../TTD-register/img/chacha.png" width="30px" height="30px" /></div>
+        <div class="shadowTips_mid_right"><img src="./../TTD-register/img/arrow.png" height="100%" /></div>
+    </div>
+    <div class="shadowTips_bottom_tipsone">1. 点击右上角的
+        <!--  <img src="./../TTD-register/img/qqshare.jpg" /> -->按钮 </div>
+    <br>
+    <div class="shadowTips_bottom_tipstwo">2. 选择"<span id="phone_browser_word"></span>"即可前往</div>
+</div>
+<script src="../js/server.js"></script>
+<script>
+    $(function(){
+        var switchId = servers.nearshopService; // 内\外网
+        var shopServer = servers.shopServer; // 内\外网
+        var couponDetail = {
+            gps: [],                // 存放经纬度
+            productId: '',         // 产品ID
+            platformId: '',         // 平台号
+            timeData: 0,            // 时间
+            getMore: [],            // 存放数据
+            totalData: '',          // 全部评论总数
+            init: function(){
+                this.bindEvent();    // 事件绑定
+                this.getId();        // 获取产品ID
+            },
+            // 事件绑定
+            bindEvent: function(){
+                var self = this;
+                $('.introduce-details').on('click', '.js-detail', function(){       // 图文详情
+                    self.jsDetail();
+                });
+                $('.js-commentAll').click(function(){   // 全部评论
+                    self.jsCommentAll();
+                });
+
+                $('img').bind('error', function(){
+                    this.src='images/icon-error.png';
+                    // this.onerror = null;
+                });
+                $('.js-address').click(function(){      // 查看地图
+                    self.jsAddress();
+                });
+                // 上拉刷新
+                $('#container').scroll(function(){
+                    if( ($('.comment-allDetail').height() + 75 - $(this).height()) === $(this).scrollTop() ){   // 到底部时重新获取数据
+                        if( couponDetail.totalData <= 10 ){
+                            $('.comment-loadAll').addClass('active')
+                        } else {
+                            self.jsCommentAll();
+                        }
+                    }
+                });
+                // 立即购买
+                $('.buyNow').click(function(){
+                    self.buyNow();
+                });
+                // 商家详情
+                $('.js-buDetail').click(function(){
+                    location.href = 'http://'+ shopServer +'/appbs/shop_to_share/Union_merchant.html?lPlatformId=' + couponDetail.platformId + '&from=singlemessage&isappinstalled=1'
+                })
+            },
+            buyNow: function(){
+                var refuserid = this.getUrlParam('refuserid');
+                var lrefereeId = this.getUrlParam('lrefereeId');
+                couponDetail.productId = this.getUrlParam('productId');
+                couponDetail.platformId = this.getUrlParam('platformId');
+                var explorer = navigator.userAgent;
+                if ((explorer.indexOf("MicroMessenger") > 0 || explorer.indexOf("QQ/") > 0)) {
+                    if (/(iPhone)/i.test(navigator.userAgent)) {
+                        $("#phone_browser_word").text("在Safari中打开");
+                    } else if (/(Android)/i.test(navigator.userAgent)) {
+                        $("#phone_browser_word").text("在浏览器中打开");
+                    }
+                    $("#shadowTips").fadeIn(300);
+                    $(".shadowTips_mid_left img").click(function() {
+                        $("#shadowTips").fadeOut(300);
+                    });
+                } else {
+                    //跳转到注册页面
+                    location.href = "../TTD-register/register_app.html?refuserid=" + refuserid + "&lrefereeId=" + lrefereeId + "&productId=" + couponDetail.productId + "&platformId=" + couponDetail.platformId;
+                }
+            },
+            // 获取产品ID
+            getId: function(){
+                var pdId = this.getUrlParam('productId');
+                this.getInitData(pdId);        // 初始数据
+            },
+            // 评论数据
+            getCoData: function(){
+                $.ajax({
+                    url: 'http://' + switchId + '/nearShop/getCommtent',
+                    type: 'post',
+                    data: {
+                      idPlatform: couponDetail.platformId,
+//                      idPlatform: 7609670,
+                      date: couponDetail.timeData
+                    },
+                    success: function(data){
+                        var datas = data;
+                        if(datas.state === '0'){
+                            couponDetail.commentData(datas);
+                        }
+                    },
+                    error: function(err){
+                        console.log(err);
+                    }
+                })
+            },
+
+            // 评论渲染
+            commentData: function(e){
+                var dataResult = e.result;
+                var sco = dataResult.score;                                 // 分数
+                var floorSco = Math.floor(sco);                // 向下取整
+                var ceilSco = Math.ceil(sco);                  // 向上取整
+                var commentPart = $('.comment-starBox li');    // 部分评论
+                var commentAll = $('.comment-allDetail li');   // 全部评论
+                var dataResultList = dataResult.list;                      // 数据
+                if( dataResult.length <= 3 ){                // 当评论的数量少于等于3条时不能查看全部评论
+                    $('.comment-num.js-commentAll').prop({'disabled': true});
+                    $('.comment-all.js-commentAll').prop({'disabled': true}).addClass('active');
+                }
+                for( var i = 0; i < ceilSco; i ++ ){
+                    if( sco > floorSco && i === floorSco ){
+                        commentPart.eq(i).addClass('activef');
+                        commentAll.eq(i).addClass('activef');
+                    } else {
+                        commentPart.eq(i).addClass('active');
+                        commentAll.eq(i).addClass('active');
+                    }
+                }
+                $('.js-sco').text(sco.toFixed(1) + '分');            // 分数位置渲染
+                $('.comment-num').text( dataResult.total + '条评论' );       // 评论总数
+                for( var j = 0; j < dataResultList.length; j ++ ){
+                    if( j === 3 ){ return false; }              // 默认三条
+                    var topStr = '<div class="comment-content line-bottom"><div class="comment-person clearFloat"><div class="comment-user"><img src=' + (dataResultList[j].headImage ? dataResultList[j].headImage : 'images/icon-error.png')  + '></div><div class="comment-persons"><span class="comment-name">' + dataResultList[j].nickName + '</span></div><span class="comment-date">' + dataResultList[j].addTime + '</span></div><p class="comment-main line2">' + dataResultList[j].content + '</p><div class="comment-imgBox clearFloat">';
+                    if(dataResultList.pics){
+                        for( var k = 0; k > dataResultList.pics.length; k ++ ){
+                            topStr += '<div class="comment-img"><img src=' + dataResultList[j].pics[k] + '></div>'
+                        }
+                    }
+                    topStr += '</div></div>';
+                    $('.comment-part').append(topStr);
+                }
+            },
+            // 获取初始数据
+            getInitData: function(d){
+//                var data = JSON.stringify({ id : d });
+              var data = { id : d };
+                $.ajax({
+                    url: 'http://' + switchId + '/nearProduct/productDetail',
+                    type: 'post',
+                    data: data,
+                    success: function(data){
+                        var datas = data;
+                        if(datas.state === '0'){
+                            couponDetail.initData(datas.result);
+                        } else {
+                            location.href = '../share/failure.html';
+                        }
+                    },
+                    error: function(err){
+                        console.log(err);
+                    }
+                })
+            },
+            // 初始化页面
+            initData: function(e){
+                couponDetail.platformId = e.idPlatform;
+                couponDetail.gps = [ e.gpsLon, e.gpsLat ];
+                $('.cover-imgBox img').attr({'src': e.picLink});      // 产品图片
+                $('.cover .content').text( e.name );                        // 产品名称
+                if(e.coinType === 1){
+                    $('.price').css('color', '#5E00BB');
+                    $('.price img').attr({'src': 'images/icon-shpCoinb.png'})
+                } else {
+                    $('.price').css('color', '#ff4848');
+                    $('.price img').attr({'src': 'images/icon-shpCoin.png'})
+                }
+                var prices = e.price.toFixed(2), coins = e.coin.toFixed(2);
+                $('.prices').text( '￥' + prices );                        // 产品价格
+                $('.coin').text( coins );                                  // 购物币
+                $('.sales-volume').text( '销量' + e.sellCount );            // 产品销量
+                $('.contact-tit').text( e.shopName );                       // 店铺名称
+                $('.contact-nub').attr({ 'href': 'tel:' + e.shopPhone});    // 店主电话
+                $('.contact-address').text( e.address );                    // 店铺地址
+                $('.introduce-main').html( e.content );                     // 内容介绍
+                $('.expireTime').text( '至' + e.expireTime );               // 有效期至
+                if( !e.canot ){                                             // 不可用日期
+                    $('.canot').hide();
+                } else {
+                    $('.canot li').text( e.canot );
+                }
+                $('.utime').text( e.utime );                                // 使用时间
+                $.each(e.law, function(i, v){                           // 使用规则
+                    $('.law').append('<li>'+ v +'</li>')
+                });
+                if(!e.detailPics[0]){                        // 当图片为空时,图文详情隐藏
+                    $('.js-detail').hide();
+                }
+                $.each(e.detailPics, function(i, v){                        // 图文详情
+                    $('.pd-detail').append('<img src='+ v +'>');
+                });
+                this.getCoData();
+
+            },
+
+            // 查看地图
+            jsAddress: function(){
+                $('.wrap').removeClass('active');
+                $('.map-contain').addClass('active');
+                // 地图初始化
+                var map = new AMap.Map('map-contain',{
+                    resizeEnable: true,
+                    zoom: 10
+                });
+                // 标出所在的位置
+                var marker = new AMap.Marker({
+                    position: couponDetail.gps,//marker所在的位置
+                    map:map//创建时直接赋予map属性
+                });
+                //也可以在创建完成后通过setMap方法执行地图对象
+                marker.setMap(map);
+                AMap.plugin(['AMap.ToolBar','AMap.Scale', 'AMap.MapType'],
+                    function(){
+                        map.addControl(new AMap.ToolBar());     // 工具条
+                        map.addControl(new AMap.Scale());           // 比例尺
+                        map.addControl(new AMap.MapType());       // 类别切换
+                    });
+                map.setFitView();
+            },
+            // 全部评论
+            jsCommentAll: function(){
+                $('.wrap').removeClass('active');
+                $('body').animate({scrollTop: 0},0);    // 滚动条会顶部
+                $('#container').addClass('active');
+                $.ajax({
+                    url: 'http://' + switchId + '/nearShop/getCommtent',
+                    type: 'post',
+                    data: {
+                      idPlatform: couponDetail.platformId,
+                      date: couponDetail.timeData
+                    },
+                    success: function(data){
+                        var datas = data;
+                        couponDetail.totalData = datas.result.total;           // 数据总数
+                        couponDetail.timeData = datas.result.nextTime;         // 加载下次的时间参数
+                        Array.prototype.push.apply(couponDetail.getMore, datas.result.list);
+                        if(datas.state === '0'){
+                            couponDetail.commentAll(datas.result.list);
+                        } else {
+                            console.log(datas.msg)
+                        }
+                    },
+                    error: function(err){
+                        console.log(err);
+                    }
+                })
+            },
+
+            // 全部评论渲染
+            commentAll: function(e){
+                for( var j = 0; j < e.length; j ++ ){
+                    var topStr = '<div class="comment-content line-bottom"><div class="comment-person clearFloat"><div class="comment-user"><img src=' + (e[j].headImage ? e[j].headImage : 'images/icon-error.png')  + '></div><div class="comment-persons"><span class="comment-name">' + e[j].nickName + '</span></div><span class="comment-date">' + e[j].addTime + '</span></div><p class="comment-main">' + e[j].content + '</p><div class="comment-imgBox clearFloat">';
+                    if(e.pics){
+                        for( var k = 0; k > e.pics.length; k ++ ){
+                            topStr += '<div class="comment-img"><img src=' + e[j].pics[k] + '></div>'
+                        }
+                    }
+                    topStr += '</div></div>';
+                    $('.comment-alls').append(topStr);
+                }
+            },
+            // 图文详情
+            jsDetail: function(){
+                $('.wrap').removeClass('active');
+                $('body').animate({scrollTop: 0},0);    // 滚动条会顶部
+                $('.pd-detail').addClass('active')
+            },
+            getUrlParam: function(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg); //匹配目标参数
+            if (r != null) return unescape(r[2]);
+            return null; //返回参数值
+        }
+
+    };
+        couponDetail.init();
+    }())
+</script>
+</body>
+</html>

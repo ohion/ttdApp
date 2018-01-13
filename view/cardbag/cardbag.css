@@ -1,0 +1,62 @@
+body{
+    background-color: #eee;
+}
+#content{
+    width: 100%;
+    margin: 1em auto;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    background-color: white;
+}
+.box{
+    /*margin-left: 1em;*/
+    text-align: left;
+}
+.ticket-box{
+    padding: 0.8em;
+    line-height: 2em;
+    height: 2em;
+}
+.center-box{
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+.ticket-box img{
+    width: 2em;
+    height: 2em;
+}
+.tx-r{
+    text-align: right;
+}
+.tx{
+    font-size: 1em;
+    color: gray;
+}
+.fl-l{
+    float: left;
+}
+.fl-r{
+    float: right;
+}
+.wid-20{
+    width: 20%;
+}
+.wid-2em{
+    width: 2em;
+}
+.wid-3em{
+    width: 2.8em;
+}
+.wid-70{
+    width: 70%;
+}
+.wid-80{
+    width: 80%;
+}
+.arrow{
+    height: 2em;
+    background-image: url(right-arrow.png);
+    background-size: 0.6em 1.2em;
+    background-repeat: no-repeat;
+    background-position: right;
+}

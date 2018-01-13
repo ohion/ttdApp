@@ -1,0 +1,495 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", "微软雅黑", Helvetica, Arial, sans-serif;
+}
+
+.whiteArea {
+    padding: 4pt 0;
+    background-color: #fff;
+}
+
+#buy,
+#shop {
+    padding: 0;
+}
+
+#remark {
+    padding: 4pt 0;
+}
+
+.top {
+    margin-top: 10pt;
+}
+
+.padding {
+    padding: 0 12pt;
+}
+
+.panddingTip {
+    padding: 0 8pt;
+}
+
+.paddingLeft {
+    padding-left: 8pt;
+}
+
+#zf_phone {
+    color: #18253D;
+}
+
+img {
+    margin-right: 8pt;
+    vertical-align: middle;
+    width: 22pt;
+}
+
+#ignoreicon img {
+    width: 16pt;
+}
+
+#buyicon,
+#shopicon {
+    border-top: 1px solid #E6E5EC;
+}
+
+#remark input,
+#buy input,
+#zf_phone input {
+    margin-left: 12pt;
+    font-size: 13pt;
+    border: none;
+    background-color: #fff;
+    width: 40%;
+}
+
+#howMoney input {
+    color: rgba(255, 72, 72, 1);
+}
+
+#howMoney input::-webkit-input-placeholder {
+    color: rgba(255, 72, 72, 0.4);
+}
+
+#remark input::-webkit-input-placeholder,
+#buyicon input::-webkit-input-placeholder,
+{
+    color: rgba(24, 37, 61, .4);
+}
+
+#remark input {
+    width: 80%;
+    color: rgba(24, 37, 61, 1);
+}
+
+#buy input {
+    margin-left: 20pt;
+    font-size: 13pt;
+    width: 40%;
+}
+
+#buyicon input {
+    width: 33%;
+    color: rgba(24, 37, 61, 1);
+}
+
+.tips {
+    opacity: 0.6;
+    color: #18253D;
+}
+
+#phoneTips {
+    margin-top: 4pt;
+}
+
+#shop span {
+    margin-left: 20pt;
+}
+
+.fl {
+    width: 16pt;
+    float: left;
+}
+
+.fr {
+    width: 92%;
+    float: right;
+}
+
+.clearfloat {
+    clear: both;
+}
+
+.paybtn {
+    width: 88%;
+    margin: 16pt auto;
+}
+
+#pay {
+    background: #FFD006;
+    border-radius: 44px;
+    text-align: center;
+    height: 44px;
+    line-height: 44px;
+    color: #2B2B2D;
+    font-size: 15pt;
+}
+
+.tips {
+    font-size: 10.5pt;
+}
+
+input#payMoney {
+    color: #FF4848;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 验证码 */
+
+#blackBg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    top: 0;
+    display: none;
+}
+
+#whiteBg {
+    margin: 4em auto;
+    width: 90%;
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    border-radius: 20px;
+    position: relative;
+    padding: 20px 0 40px;
+}
+
+.inputBoxContainer {
+    max-width: 30.5em;
+    width: 80%;
+    height: 48px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.inputBoxContainer .bogusInput {
+    width: 100%;
+    height: 100%;
+    border: #c3c3c3 1px solid;
+    overflow: hidden;
+    position: absolute;
+    z-index: 0;
+}
+
+.inputBoxContainer .realInput {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    opacity: 0;
+}
+
+.inputBoxContainer .bogusInput input {
+    padding: 0;
+    width: 16.3%;
+    height: 48px;
+    float: left;
+    background: #eee;
+    text-align: center;
+    font-size: 1.25em;
+    border: none;
+    border-right: #C3C3C3 1px solid;
+    border-radius: 0;
+}
+
+.realInput:focus {
+    /*  //密码框聚焦的时候需要改变其位置，否则IOS上会有闪动的光标~ */
+    left: -1000px;
+    top: -100px;
+}
+
+.inputBoxContainer .bogusInput input:last-child {
+    border: none;
+}
+
+.codeTitle {
+    font-family: "PingFangSC-Regular";
+    font-size: 1.25em;
+    color: #180202;
+    text-align: center;
+}
+
+.codePassword,
+.codeTips {
+    width: 80%;
+    opacity: 0.6;
+    font-family: "PingFangSC-Regular";
+    font-size: 0.9125em;
+    color: #180202;
+    text-align: center;
+    margin: 20px auto 0;
+}
+
+.codePassword {
+    margin: 0px auto 20px;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.left,
+.fl {
+    float: left;
+}
+
+.right,
+.fr {
+    float: right;
+}
+
+.getCodeBox {
+    max-width: 20.5em;
+    width: 70%;
+    margin: 35px auto 20px;
+    height: 32px;
+}
+
+.getCodeText {
+    width: 58%;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    color: #180202;
+}
+
+#getCode {
+    text-align: center;
+    width: 42%;
+    height: 32px;
+    line-height: 32px;
+    background: #FF4848;
+    border-radius: 22px;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+.btnBox {
+    max-width: 20.5em;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 2em;
+}
+
+#cancelBtn {
+    background: #D8D8D8;
+    border-radius: 22px;
+    height: 42px;
+    line-height: 42px;
+    width: 45%;
+}
+
+#verBtn {
+    background: #FFD006;
+    border-radius: 22px;
+    height: 42px;
+    line-height: 42px;
+    width: 45%;
+}
+
+#shadow img {
+    margin: 0 !important;
+}
+
+#newUse {
+    height: 64px;
+    line-height: 64px;
+    color: #fff;
+    background: #FF3D3A;
+}
+
+#getCoin {
+    width: 80px;
+    height: 33px;
+    line-height: 33px;
+    border: 1px solid;
+    border-radius: 16.5px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 0 0 #B70600;
+    font-size: 15px;
+    color: #FF322B;
+    margin-right: 15px;
+    text-align: center;
+    margin-top: 14px;
+}
+
+#getCoinDialog {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+#fans {
+    width: 80%;
+    background: #fff;
+    border-radius: 20px;
+    height: 56px;
+    line-height: 56px;
+    color: #1C1C1C;
+    font-size: 15px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#showPhone {
+    background: #fff;
+    border-radius: 20px;
+    height: 135px;
+    line-height: 45px;
+    margin-top: 10px;
+    font-size: 15px;
+    width: 80%;
+    margin: 10px auto;
+    padding-top: 20px;
+}
+
+#showPhone img {
+    margin-right: 2pt;
+    vertical-align: middle;
+    width: 18pt;
+}
+
+#showPhone #phone {
+    width: 43%;
+}
+
+#verCode {
+    width: 32%;
+    margin-left: 6px;
+    border: none;
+}
+
+#getCodeBtn {
+    background: #FFD006;
+    border-radius: 37px;
+    font-size: 13px;
+    border: none;
+    height: 37px;
+    line-height: 37px;
+    width: 32%;
+}
+
+#code {
+    border-top: 1px solid #DFDEE7;
+}
+
+#publichttp {
+    width: 80%;
+    background: #fff;
+    border-radius: 20px;
+    height: 80px;
+    /*line-height: 40px;*/
+    font-size: 15px;
+    margin: auto;
+}
+
+#publichttp a {
+    color: #4F82FF!important;
+}
+
+#useService,
+#software {
+    background-size: 100%;
+}
+
+#publichttp>div {
+    padding-top: 18px;
+}
+
+#publichttp img {
+    width: 15pt;
+}
+
+#get {
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    color: #fff;
+    background: #FF4848;
+    border-radius: 22px;
+    text-align: center;
+    font-size: 18px;
+    margin: auto;
+    margin-top: 10pt;
+    margin-bottom: 62px;
+    border: none;
+}
+
+#close {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+#close img {
+    width: 44px;
+}
+
+@media screen and (min-device-width:320px) and (max-device-width:359px) {
+    .tips {
+        font-size: 11pt;
+    }
+    #zf_phone,
+    #zf_phone input {
+        font-size: 11pt;
+    }
+    #buy input {
+        margin-left: 2pt;
+        width: 41%;
+    }
+    #buyicon input {
+        margin-left: 0pt;
+        width: 33%;
+    }
+    .codeTips {
+        width: 100%;
+    }
+}

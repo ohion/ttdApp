@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html>
+<!-- <head runat="server"> -->
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width" />
+    <title>地图定位</title>
+    <style type="text/css">
+    body,
+    html,
+    #container {
+        height: 100%;
+        margin: 0px
+    }
+
+    #location {
+        padding: 10px;
+    }
+
+    .blueBtn {
+        width: 80px;
+        height: 38px;
+        line-height: 38px;
+        background: #4188F2;
+        color: #fff;
+        border-radius: 2px;
+        border: none;
+        font-size: 16px;
+    }
+
+    .left {
+        float: left;
+        width: 70%;
+        overflow: hidden;/*超出部分隐藏*/
+        white-space: nowrap;/*不换行*/
+        text-overflow:ellipsis;/*超出部分文字以...显示*/
+    }
+
+    .right {
+        float: right;
+        width: 28%;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 高德地图API -->
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=f2c9b8fb455a0f8966a1c787ac52a992"></script>
+    <!-- 高德地图API-点标注 -->
+    <script src="http://webapi.amap.com/js/marker.js"></script>
+    <!-- 高德地图API-工具控件 -->
+    <script type="text/javascript" src="http://webapi.amap.com/demos/js/liteToolbar.js"></script>
+    <!-- JQuery1.10.1 -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <script>
+    //地图对象
+    var map = null;
+    //地图 当前标注 对象
+    var marker = null;
+
+    //坐标搜索地址对象(根据经纬度获得地址)
+    var geocoder = null;
+
+
+    //地图的点击事件
+    function mapClick(e) { //地图点击事件
+        setMarkerPos(e.lnglat); //设置标注位置
+        getAddressServer(e.lnglat); //根据坐标获取地址
+    }
+
+
+    //根据地址搜索坐标的回调
+    function searchCallBack(status, result) {
+        if (status == "complete") {
+            marker.setPosition(map.getCenter());
+        }
+    }
+
+    function getAddressServer(pos) {
+        //逆地理编码,得到地址
+        geocoder.getAddress(pos, getAddressCallBack);
+    }
+
+    //获取文本框Lng对象
+    function getTxbLng() {
+        return $("#location #lng");
+    }
+    //获取文本框Lat对象
+    function getTxbLat() {
+        return $("#location #lat");
+    }
+
+    //获取文本框坐标
+    function getTxbPos() {
+        var x = getTxbLng().val();
+        var y = getTxbLat().val();
+        return [x, y];
+    }
+    //设置文本框坐标
+    function setTxbPos(pos) {
+        if (pos.lng == undefined) {
+            pos.lng = pos[0];
+        }
+        if (pos.lat == undefined) {
+            pos.lat = pos[1];
+        }
+        getTxbLng().val(pos.lng);
+        getTxbLat().val(pos.lat);
+    }
+
+
+    //根据UI文本框的坐标点 进行定位
+    function locationServer() {
+        var pos = getTxbPos();
+        locationServerByPos(pos);
+    }
+
+    function locationServerByPos(pos) {
+        map.setCenter(pos);
+        marker.setPosition(pos);
+    }
+    //设置标注点位置
+    function setMarkerPos(pos) {
+        marker.setPosition(pos); //设置标注点位置
+        setTxbPos(pos); //设置UI文本框坐标
+    }
+    //获取标注点位置
+    function getMarkerPos() {
+        return marker.getPosition();
+    }
+    //设置地图中心点
+    function setMapCenter(pos, zoom) {
+        if (isNaN(zoom)) {
+            zoom = 17;
+        }
+        map.setCenter(pos); //设置地图中心点
+        setMarkerPos(pos); //设置标注位置
+        map.setZoom(zoom); //设置缩放距离
+    }
+    //获取url参数
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return decodeURI(r[2]);
+        } else {
+            return null;
+        }
+    }
+    var gpsLat = getUrlParam("gpsLat");
+    var gpsLon = getUrlParam("gpsLon");
+
+    function init() {
+        map = new AMap.Map('container', {
+            center: [gpsLon, gpsLat],
+            zoom: 17
+        });
+        marker = new AMap.Marker({
+            position: map.getCenter(),
+            title: "当前位置",
+            map: map
+        });
+
+        //设置UI经纬度
+        setTxbPos(map.getCenter());
+    }
+    $(function() {
+        init();
+
+        //店铺地址
+        var address = getUrlParam('address');
+        $('.address').text(address);
+
+        //点击详情，调起自带地图
+        $('.blueBtn').click(function() {
+            window.location = "http://uri.amap.com/marker?position="+gpsLon+","+gpsLat;
+          
+        });
+    });
+    </script>
+    <!-- 地图对象 -->
+    <div id="container" style="width:100%; height:90%" tabindex="0"></div>
+    <!-- 标记当前店铺地址 -->
+    <div id="location">
+        <div class="left address">深圳天天兑科技有限公司</div>
+        <div class="right">
+            <button class="blueBtn">详情</button>
+        </div>
+    </div>
+  
+</body>
+
+</html>

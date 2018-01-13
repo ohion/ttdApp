@@ -1,0 +1,262 @@
+@-webkit-keyframes buzz {
+    0%{
+        border-color: transparent;
+        -webkit-transform: translateX(3px) translateY(3px) rotate(5deg);
+    }
+    50%{
+        border-color: transparent;
+        -webkit-transform: translateX(-3px) translateY(3px) rotate(-5deg);
+    }
+    100%{
+        border-color: transparent;
+        -webkit-transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+}
+.buzz{-webkit-animation: buzz 0.2s linear 4;}
+.fadeIn{opacity: 1 !important;-webkit-transition: opacity 2s ease;}
+#tymText{visibility: hidden;}
+a{text-decoration: none;}
+.ulev-6{font-size: 0.95em !important;}
+.lis {
+    padding: 0.5em;
+    min-height: 2em;
+}
+.bg{background-color: #f1f1f1;}
+.uinn-acc1{
+	padding:0.28125em 0 0.21875em 0;
+}
+.uwh-acc2{
+	width:1.5em;
+	height:1.5em;
+}
+.umar-t-acc1{
+	margin-top:0.5625em;
+	margin-bottom:1.6em;
+}
+.mar-ar1{
+    margin-right:0.625em;
+}
+.ulev-app1{
+    font-size:0.875em;
+}
+.font-lev{font-size: 0.85em;}
+.font-lev-1{font-size: 0.7em;}
+.umar-ar3{
+    margin-right:0.5em;
+}
+.umar-at1{
+    margin-top:1.2em;
+}
+
+/*生活圈样式*/
+.sudoku{border-top: 1px solid #d5d5d5;background-color: white;}
+.box,.big-box{
+    border-bottom: 1px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+    -webkit-box-sizing: border-box;
+}
+.box{width: 25%;color: black;background-color: transparent;}
+.box-img{background-size: 100% 100%;background-repeat: no-repeat;}
+.big-box{background-size: 100% 100%;width: 50%;background-repeat: no-repeat;}
+.last-line-box{border-bottom: 0;}
+.ub-img1 {
+    background-size: 100% 100% !important;
+    background-repeat: no-repeat;
+}
+.box-text{width: 100%;}
+/*各模块顶部边距*/
+#main-gallery,.near-shop{margin-top: 0.65em;}
+/*秒杀夺宝vip第一行*/
+.firstline-left{
+    width: 0.2em;
+    margin-right: 0.425em;
+}
+.firstline-right{width: 3em;}
+.firstline-angle{
+    width: 1em;
+    height: 1em;
+    background-size: 100% 100%;
+    margin-top: 0.23em;
+    background-repeat: no-repeat;
+}
+.seckill-bg{background-color: #fa5555;}
+.seckill-angle{background-image: url(../images/more_seckill.png);}
+.skill-btn,.indiana-btn,.vip-btn{
+    width: 45%;
+    color: white;
+    padding: 0.5em 0;
+    border-radius: 4px;
+}
+.indiana-bg{background-color: #ffb643;}
+.indiana-angle{background-image: url(../images/more_indiana.png);}
+.indiana-midline{
+    /*width: 52%;*/
+    height:0.4em;
+    border-radius: 5px;
+}
+.vip-bg{background-color: #cc3366;}
+.vip-angle{background-image: url(../images/more_vip.png);}
+/*附近积分消费*/
+.width-40per{width: 40%;}
+.width-60per{width: 60%;}
+.width-70per{width: 70%;}
+.near-box{padding-top: 0.8em !important;padding-bottom: 0.8em !important;}
+/*.near-top-left{width: 24.5%;}*/
+.near-top-left{width: 28.5%;}
+.near-box-bottom{
+    border-bottom: 1px solid #eee;
+    padding-top: 0;
+    padding-bottom: 0.7em;
+    margin: 0 0.7em;
+    font-size: 0.7em;
+}
+/*兑换点*/
+.exchange-point{
+    position:absolute;
+    margin-top: 1.05em;
+    color: gray;
+    margin-right: 1em;
+    top: 0;
+    right: 0;
+}
+.present-num{
+    background-color: #fb6b5b;
+    color: white;
+    font-size: 1.6em;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    margin-left:0.2em;
+    margin-right:0.2em;
+    border-radius: 5px;
+}
+.img{
+    margin: 0px 0;
+    padding-bottom: 5em;
+    /*padding-bottom: 50%;*/
+    width: 100%;
+    height: 0;
+    text-align: center;
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+}
+.mar-r{margin-right: 0.3em;}
+.mar-t{margin-top: 0.5em;}
+.mar-mt{margin-top: 0.3em;}
+.mar-st{margin-top: 0.1em;}
+.mar-l{margin-left: 0.5em;}
+.mar-sl{margin-left: 0.3em;}
+.mar-ssl{margin-left: 0.2em;}
+.mar-b{margin-bottom: 0.5em;}
+.mar-r-3per{margin-right: 3%;}
+.t-org-pM1{
+    color:#f78c3e;
+}
+.t-org-pM2{
+    color:#e99d3a;
+}
+.b-gra-pM1{
+    border: 0;
+}
+.uinn-pM1{
+    padding:0.5em 0.7em;
+}
+.uw-pM2{
+    width:71%;
+    /*width:75%;*/
+}
+.uh-pM2{
+    height:2.2em;
+}
+.t-gra5{
+    color:#686868;
+}
+.uh-app1{
+    height:3.125em;
+}
+.uw-app2{
+    width:100%;
+}
+.c-wh{
+    background-color: white;
+}
+.mar-ar1{
+    margin-right:0.625em;
+}
+/*颜色*/
+.red{color: red;}
+.near-color{color: #fb6b5b}
+.unavailable{color:#CCCCCC}
+.seckill-color{color: #fa5555}
+.indiana-color{color: #ffb643}
+.vip-color{color: #cc3366}
+/*广告图宽高*/
+.slide-img{
+    width: 100%;
+    height: 6.5em;
+}
+.slick-slider{margin-bottom: 0 !important;margin-top: 0.65em;}
+/*秒杀夺宝VIP*/
+.t-gar-a0{
+    color:#a0a0a0;
+}
+.uinn-esh3{
+    padding:0.625em 0.3em 0 0;
+}
+.uinn-esh4{
+    padding:0.5em 0.1875em 0.3em 0.3125em;
+}
+.product-img{
+    opacity: 0;
+    margin: 0px 0;
+    padding-bottom: 100%;
+    width: 100%;
+    height: 0;
+    text-align: center;
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+}
+.product-name{
+    color: rgb(100,100,100);
+    white-space:pre-wrap !important;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-height: 1.4em;
+    height: 2.8em;
+    -webkit-box-orient: vertical;
+}
+.seckill-line2{
+    color: #8f8f8f;
+}
+.product-box-bottom{
+    padding: 0.8em 0.6em;
+    background-color: #f8f8f8;
+}
+.umw-eleL{
+    width:6.5625em;
+}
+.c-wh{
+    background-color: white;
+}
+.uinn-a7{
+    padding:0 0.625em;
+}
+.mar-aL1{
+    margin-left:0.625em;
+}
+.mar-aR1{
+    margin-right:0.625em;
+}
+.umar-at2{
+    margin-top:0.65em;
+    padding-bottom: 1em
+}
+.product-box{
+    width: 50%;
+}
+.shop-name{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取用户关系</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../common/toast/toast.css">
+</head>
+<body>
+    <h2>查询用户关系</h2>
+    <form action="index.html">
+        <div>
+            用户手机号 <input type="text" id="phone" maxlength="11"/><button id="search" type="submit">搜索</button>
+        </div>
+    </form>
+    <div id="search-result-box">
+        <p>
+            用户推广人ID：<span id="refuserId"></span>
+            用户推广人手机号：<span id="refuserPhone"></span>
+            用户推广人关注的平台号：<span id="refuserMachineid"></span>
+        </p>
+        <p>
+            用户ID：<span id="userId"></span>
+            用户关注的平台号：<span id="machineId"></span>
+            用户的推广人数：<span id="extendNum"></span>人
+        </p>
+        <table border="1" align="center">
+        	<caption>用户推广的人信息</caption>
+            <tr class="table-header">
+                <td>ID</td>
+                <td>手机号</td>
+                <td>关注的平台号</td>
+            </tr>
+        </table>
+    </div>
+    <!-- 吐司层-->
+    <div id="shadow"><div id="toast"></div></div>
+    <script src="../common/jquery-2.1.4.min.js"></script>
+    <script src="../common/toast/toast.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

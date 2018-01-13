@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width" />
+    <title>下载美支付</title>
+    <style>
+    #shadowTips {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    .shadowTips_top {
+        width: 100%;
+        height: 2%;
+    }
+    
+    .shadowTips_mid {
+        width: 100%;
+        height: 20%;
+    }
+    
+    .shadowTips_mid_left {
+        float: left;
+        width: 50%;
+        height: 100%;
+        padding-left: 5%;
+        text-align: left;
+    }
+    
+    .shadowTips_mid_right {
+        float: right;
+        width: 45%;
+        height: 100%;
+        text-align: right;
+    }
+    
+    .shadowTips_bottom_tipsone,
+    .shadowTips_bottom_tipstwo {
+        width: 100%;
+        height: 10%;
+        font-size: 20px;
+        padding-left: 0%;
+    }
+    
+    .shadowTips_bottom_tipsone img {
+        border-radius: 10px;
+    }
+    </style>
+</head>
+
+<body style="text-align: center;margin:0;">
+    <a href="" id="toDownloadPage" style="text-decoration: none;">
+        <div style="margin-top:10%;margin-left:25%;width: 50%;height: 2.5em;font-size: 1.2em;line-height: 2.5em;background-color: #25b4ff;border-radius:0.8em;color:white;">下载美支付</div>
+    </a>
+    <p style="color:#bababa;font-size: 0.7em;margin-bottom: 5px;font-weight:normal;">支持ios7.0以上、Android2.3以上</p>
+    <div style="text-align: left;display: table;margin: 0 auto;color:#bababa;font-size:0.8em;">
+        <div style=""><span><a href='http://zhushou.360.cn/detail/index/soft_id/3557093'>360手机助手</a>，搜索“美支付”</span></div>
+        <div style=""><span><a href='http://www.wandoujia.com/apps/com.tiantiandui'>豌豆荚助手</a>，搜索“美支付”</span></div>
+        <div style=""><span><a href='
+http://a.app.qq.com/o/simple.jsp?pkgname=com.tiantiandui'>腾讯应用宝</a>，搜索“美支付”</span></div>
+        <div style=""><span><a href='
+http://app.mi.com/details?id=com.tiantiandui&ref=search'>小米手机助手</a>，搜索“美支付”</span></div>
+        <div style=""><span><a href='
+http://shouji.baidu.com/software/10566982.html'>百度手机助手</a>，搜索“美支付”</span></div>
+        <div style=""><span><a href='
+http://shouji.baidu.com/software/10566982.html'>91手机助手</a>，搜索“美支付”</span></div>
+        <div style=""><span><a href='
+http://shouji.baidu.com/software/10566982.html'>安卓市场助手</a>，搜索“美支付”</span></div>
+        <div style=""><span><a href='
+http://app.hicloud.com/app/C10718711'>华为应用市场</a>，搜索“美支付”</span></div>
+        <div style=""><span><a href="
+http://store.oppomobile.com/product/0010/733/867_1.html?from=1152_1">Oppo应用市场</a>，搜索“美支付”</span></div>
+    </div>
+    <div id="shadowTips">
+        <div class="shadowTips_top"></div>
+        <div class="shadowTips_mid">
+            <div class="shadowTips_mid_left"><img src="img/chacha.png" width="30px" height="30px" /></div>
+            <div class="shadowTips_mid_right"><img src="img/arrow.png" height="100%" /></div>
+        </div>
+        <div class="shadowTips_bottom_tipsone">1. 点击右上角的 <img src="img/qqshare.jpg" /> 按钮 </div>
+        <br>
+        <div class="shadowTips_bottom_tipstwo">2. 选择"<span id="phone_browser_word"></span>"即可下载</div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script>
+    //判断是否手机端
+    function IsMobile() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = ["Android", "iPhone",
+            "SymbianOS", "Windows Phone"
+        ];
+        var flag = false;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = true;
+                break;
+            }
+        }
+        return flag;
+    }
+    // 获取url参数
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return unescape(r[2]);
+        return null;
+    }
+
+    $(document).ready(function() {
+        var explorer = navigator.userAgent;
+        if (IsMobile()) {
+            $("#toDownloadPage").removeAttr("href"); //移除href属性
+            //如果在QQ或微信打开则显示温馨提示
+            if ((explorer.indexOf("MicroMessenger") > 0 || explorer.indexOf("QQ/") > 0)) {
+                var shareImg = ''; //iPhone、android手机微信图标不同
+                if (navigator.userAgent.indexOf("MicroMessenger") > 0) {
+                    if (/(iPhone)/i.test(navigator.userAgent)) {
+                        shareImg = "./img/weixinshare.jpg";
+                    } else if (/(Android)/i.test(navigator.userAgent)) {
+                        shareImg = "./img/andr_weixin_share.jpg";
+                    }
+                } else if (navigator.userAgent.indexOf("QQ/") > 0) {
+                    shareImg = "./img/qqshare.jpg";
+                }
+                if (/(iPhone)/i.test(navigator.userAgent)) {
+                    $("#phone_browser_word").text("在Safari中打开");
+                } else if (/(Android)/i.test(navigator.userAgent)) {
+                    $("#phone_browser_word").text("在浏览器中打开");
+                }
+                $(".shadowTips_bottom_tipsone img").attr("src", shareImg);
+
+                $("#toDownloadPage").click(function() {
+                    $("#shadowTips").fadeIn(300);
+                });
+                $(".shadowTips_mid_left img").click(function() {
+                    $("#shadowTips").fadeOut(300);
+                });
+            } else if (/(iPhone)/i.test(explorer)) {
+                //给按钮设置点击链接  ios下载
+                $("#toDownloadPage").click(function() {
+                    // location.href = "https://itunes.apple.com/cn/app/ben-de-sheng-huo-quan/id1023314197?mt=8";
+                    location.href = "https://itunes.apple.com/cn/app/mei-zhi-fu/id1112806209?mt=8";
+                });
+            } else if (/(Android)/i.test(explorer)) {
+                //给按钮设置点击链接  安卓下载
+                $("#toDownloadPage").click(function() {
+                    location.href = "http://tiyoumeapp.oss-cn-shenzhen.aliyuncs.com/MeChat.apk";
+                });
+            }
+        } else {
+            // 设置下载客户端按钮平台号传参
+            if (getQueryString("lrefereeId") != null) {
+                var url = "../download/index.html?lrefereeid=" + getQueryString("lrefereeId");
+                $("#toDownloadPage").attr("href", url);
+            }
+        }
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">   <!--设置缓存的页过期之前的分钟数。若用户在页过期之前返回该页那么就显示缓存的版本-->
+    <meta name="msapplication-tap-highlight" content="no"><!--windows phone 点击无高光-->
+    <meta name="format-detection" content="telephone=no"><!-- 禁止识别电话号码 -->
+	<title>投票</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" href="toast/toast.css" />
+    <script type="text/javascript" src="toast/toast.js"></script>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/template.js"></script>
+	<script type="text/javascript" src="../js/server.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+
+</head>
+<body>
+	<div class="banner">
+		<img src="" alt="" id="head">
+	</div>
+	<div class="content" id="content">
+			<!-- <li>
+				<div class="left flex-center num">10</div>
+				<div class="left detail">
+					<p class="name">北京市沐浴行业协会</p>
+					<p class="cuttentvote">当前票数:<span class="votenum"></span></p>
+				</div>
+				<div class="flex-mid right"><button class="vote">投票</button></div>
+			</li> -->
+			
+		<!-- </ul>  -->
+	</div>
+	<p class="tip">下拉加载更多</p>
+	 <script id="tpl" type="text/html">
+	<ul>
+	    <%for(var i = 0; i < result.list.length; i++) {%>
+	   <li>
+			<%if (((i+1)+10*(result.page-1))<10) {%>
+			<div class="left flex-center num"><%:= "0"+((i+1)+10*(result.page-1)) %></div>
+			 <%}else{%>
+			<div class="left flex-center num"><%:= (i+1)+10*(result.page-1) %></div>
+			 <%}%>
+			<div class="left detail">
+				<p class="name"><%:=result.list[i].name%></p>
+				<p class="cuttentvote">当前票数:<span class="votenum"><%:=result.list[i].count%></span></p>
+			</div>
+			<div class="flex-mid right">
+				  <%if (!result.list[i].isVote) {%>
+				<button class="vote" data-id=<%:=result.list[i].id%>>投票</button>
+				  <%}else{%>
+				
+				<button class="vote inactive" disabled="disabled">已投票</button>
+				<%}%>
+
+			</div>
+		</li>
+	    <%}%>
+	</ul>
+	</script>
+</body>
+</html>

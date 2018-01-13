@@ -1,0 +1,371 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    color: #18253D;
+    font-family: "Hiragino Sans GB", "Microsoft Yahei", SimSun, Arial, "Helvetica Neue", Helvetica
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 重写slide 样式 */
+
+#wowslider-container {
+    max-width: 100%;
+}
+
+#wowslider-container .ws_bullets {
+    width: 55px;
+    margin: 0 auto;
+    margin-top: -25px;
+}
+
+#wowslider-container .ws_shadow {
+    background: none;
+    position: relative;
+}
+
+.clearfloat {
+    clear: both;
+}
+
+.omit {
+    width: 76%;
+    display: none;
+    position: relative;
+    margin:5px 0 5px 25px;
+}
+
+.omit img {
+    position: absolute;
+    top: -3px;
+    left: -30px;
+}
+
+.swipe-posfixed {
+    position: absolute;
+    top: 0;
+    right: 24px;
+    width: 21.3%;
+    padding-top: 6px;
+    padding-bottom: 8px;
+    box-sizing: border-box;
+    background: #FE5959;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 0 0 50% 50%;
+    text-align: center;
+    z-index: 9999;
+    display: none;
+}
+
+#mostcut {
+    display: block;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.activetime {
+    height: 34px;
+    box-sizing: border-box;
+    padding-left: 12px;
+    line-height: 34px;
+    background: #3C3C3C;
+    color: #fff;
+    clear: left;
+    display: none;
+}
+
+
+
+
+
+
+
+
+/* 商品详情样式 */
+
+#content {
+    background-color: #E6E5EC;
+}
+
+#Info,
+#choose,
+#feedback,
+#shop,
+#ImageInfo {
+    background: #fff;
+}
+
+#Info {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.wrapper {
+    width: 95%;
+    margin-left: 5%;
+}
+
+.inner {
+    padding: 10px 0;
+    min-height: 60px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+#name {
+    width: 75%;
+}
+
+#like {
+    width: 24%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-left: 1px solid #7A7985;
+}
+
+#like img {
+    width: 2em;
+}
+
+#price {
+    background: #18253D;
+    color: #ffd006;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 1em;
+}
+
+#send {
+    clear: both;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #eee;
+}
+
+#like,
+#send {
+    font-size: 0.9em;
+    opacity: 0.6;
+}
+
+#carriage {
+    float: left;
+    margin-right: 10px;
+}
+
+#address {
+    float: left;
+}
+
+.top {
+    margin-top: 12px;
+}
+
+#choose {
+    height: 48px;
+    line-height: 48px;
+}
+
+.attr {
+    margin-left: 2em;
+}
+
+.width {
+    width: 95%;
+}
+
+.alt {
+    text-align: right;
+    /*cursor: pointer;*/
+}
+
+#comment,
+#commentList {
+    height: 48px;
+    line-height: 48px;
+}
+
+#commentList {
+    border-top: 1px solid #DFDEE7;
+    color: red;
+    font-weight: normal;
+}
+
+#shop img {
+    width: 63px;
+    height: 63px;
+    margin: 6px 0;
+}
+
+.shopName {
+    text-indent: 1em;
+    line-height: 68px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#shop .enter {
+    width: 16%;
+    height: 75px;
+    line-height: 75px;
+    position: absolute;
+    right: 10px;
+}
+
+#shop {
+    height: 75px;
+}
+
+#word {
+    width: 200px;
+    margin: 20px auto;
+    text-align: center;
+    opacity: 0.6;
+}
+
+#ImageInfo img {
+    width: 100%;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    font-size: 0;
+}
+
+#choose .right img,
+#shop .right img {
+    width: 9px;
+    height: auto;
+}
+
+#shop .right img {
+    margin: -3px 0px -3px 10px;
+}
+
+.ttd {
+    width: 68px;
+    background-color: #ffcf04;
+    padding: 20px 2px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.eight {
+    width: 74%;
+}
+
+#theYuan {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    text-indent: 1em;
+}
+
+#hide {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    background: #427CFF;
+    text-indent: 12px;
+    display: none;
+}
+
+.remarks {
+    color: #18253D;
+    font-size: 13px;
+    margin: 10px auto;
+    opacity: 0.6;
+}
+
+.tag {
+    width: 35%;
+    height: 22px;
+    line-height: 22px;
+    border: 1px solid red;
+    border-radius: 100px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    display: none;
+    white-space: nowrap;
+    /*  text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;*/
+    overflow: hidden;
+}
+
+.isBargain {
+    display: none;
+}
+
+.isBargain>div {
+    margin-top: 8.5px;
+}
+
+.minPrice {
+    color: #FF4848;
+}
+
+.isBargain img {
+    width: 24px;
+}
+
+#ImageInfo {
+    margin-bottom: 52px;
+}
+
+#activity {
+    border-top: 1px solid rgb(238, 238, 238);
+    display: block;
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+#clickToggle {
+    position: absolute;
+    float: right;
+    top: 0;
+    right: 12px;
+    position: absolute;
+    color: #999999;
+    font-size: 15px;
+    height: 32px;
+    line-height: 32px;
+}
+
+#clickToggle img {
+    width: 15px;
+}
+
+.toggle span {
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 0;
+}

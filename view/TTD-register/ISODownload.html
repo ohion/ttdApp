@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width" />
+    <title>ISO版本安装教程</title>
+    <link rel="stylesheet" type="text/css" href="css/download.css" />
+    <script src="js/jquery.js"></script>
+</head>
+
+<body style="background:#D4D5DA">
+    <div>
+        <img src="img/iosloaddown.jpg" style="width:100%; height:100%; ">
+    </div>
+    <a href="" id="toDownloadPage" style="text-decoration: none;">
+        <div class="toDownloadPage redBtn downloadBtn" style="margin-bottom:10%; text-align: center;">立即下载</div>
+    </a>
+
+
+    <div id="shadowTips">
+        <div class="shadowTips_top"></div>
+        <div class="shadowTips_mid">
+            <div class="shadowTips_mid_left"><img src="img/chacha.png" width="30px" height="30px" /></div>
+            <div class="shadowTips_mid_right"><img src="img/arrow.png" height="100%" /></div>
+        </div>
+        <div class="shadowTips_bottom_tipsone">1. 点击右上角的 <img src="img/qqshare.jpg" /> 按钮 </div>
+        <br>
+        <div class="shadowTips_bottom_tipstwo">2. 选择"<span id="phone_browser_word"></span>"即可下载</div>
+    </div>
+    
+</body>
+<script>
+//判断是否手机端
+function IsMobile() {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = ["Android", "iPhone",
+        "SymbianOS", "Windows Phone"
+    ];
+    var flag = false;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flag = true;
+            break;
+        }
+    }
+    return flag;
+}
+// 获取url参数
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null)
+        return unescape(r[2]);
+    return null;
+}
+
+$(document).ready(function() {
+    var explorer = navigator.userAgent;
+    if (IsMobile()) {
+        $("#toDownloadPage").removeAttr("href"); //移除href属性
+        //如果在QQ或微信打开则显示温馨提示
+        if ((explorer.indexOf("MicroMessenger") > 0 || explorer.indexOf("QQ/") > 0)) {
+            var shareImg = ''; //iPhone、android手机微信图标不同
+            if (navigator.userAgent.indexOf("MicroMessenger") > 0) {
+                if (/(iPhone)/i.test(navigator.userAgent)) {
+                    shareImg = "./img/weixinshare.jpg";
+                } 
+            } else if (navigator.userAgent.indexOf("QQ/") > 0) {
+                shareImg = "./img/qqshare.jpg";
+            }
+            if (/(iPhone)/i.test(navigator.userAgent)) {
+                $("#phone_browser_word").text("在Safari中打开");
+            }
+            $(".shadowTips_bottom_tipsone img").attr("src", shareImg);
+
+            $("#toDownloadPage").click(function() {
+                $("#shadowTips").fadeIn(300);
+            });
+            $(".shadowTips_mid_left img").click(function() {
+                $("#shadowTips").fadeOut(300);
+            });
+        } else if (/(iPhone)/i.test(explorer)) {
+            //给按钮设置点击链接  ios下载
+            $("#toDownloadPage").click(function() {
+                // location.href = "https://itunes.apple.com/cn/app/ben-de-sheng-huo-quan/id1023314197?mt=8";
+                //location.href = "itms-services://?action=download-manifest&url=http://tiyoumeapp.oss-cn-shenzhen.aliyuncs.com/manifest1.plist";
+                location.href = "https://beta.bugly.qq.com/vj1q";
+            });
+        }
+    } else {
+        // 设置下载客户端按钮平台号传参
+        if (getQueryString("lrefereeId") != null) {
+            var url = "../download/index.html?lrefereeid=" + getQueryString("lrefereeId");
+            $("#toDownloadPage").attr("href", url);
+        }
+    }
+});
+</script>
+
+</html>

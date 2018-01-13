@@ -1,0 +1,45 @@
+[2016-09-10 18:14:38.465] [ERROR] normal - { [Error: socket hang up] code: 'ECONNRESET' }
+Error: socket hang up
+    at TLSSocket.onHangUp (_tls_wrap.js:1054:19)
+    at TLSSocket.g (events.js:260:16)
+    at emitNone (events.js:72:20)
+    at TLSSocket.emit (events.js:166:7)
+    at endReadableNT (_stream_readable.js:921:12)
+    at nextTickCallbackWith2Args (node.js:442:9)
+    at process._tickCallback (node.js:356:17)
+[2016-09-10 18:15:56.831] [ERROR] normal - { [Error: socket hang up] code: 'ECONNRESET' }
+Error: socket hang up
+    at TLSSocket.onHangUp (_tls_wrap.js:1054:19)
+    at TLSSocket.g (events.js:260:16)
+    at emitNone (events.js:72:20)
+    at TLSSocket.emit (events.js:166:7)
+    at endReadableNT (_stream_readable.js:921:12)
+    at nextTickCallbackWith2Args (node.js:442:9)
+    at process._tickCallback (node.js:356:17)
+[2016-09-10 18:19:49.493] [ERROR] normal - { [Error: socket hang up] code: 'ECONNRESET' }
+Error: socket hang up
+    at TLSSocket.onHangUp (_tls_wrap.js:1054:19)
+    at TLSSocket.g (events.js:260:16)
+    at emitNone (events.js:72:20)
+    at TLSSocket.emit (events.js:166:7)
+    at endReadableNT (_stream_readable.js:921:12)
+    at nextTickCallbackWith2Args (node.js:442:9)
+    at process._tickCallback (node.js:356:17)
+[2016-09-10 18:35:25.492] [ERROR] normal - { [Error: socket hang up] code: 'ECONNRESET' }
+Error: socket hang up
+    at TLSSocket.onHangUp (_tls_wrap.js:1054:19)
+    at TLSSocket.g (events.js:260:16)
+    at emitNone (events.js:72:20)
+    at TLSSocket.emit (events.js:166:7)
+    at endReadableNT (_stream_readable.js:921:12)
+    at nextTickCallbackWith2Args (node.js:442:9)
+    at process._tickCallback (node.js:356:17)
+[2016-09-10 18:35:30.738] [ERROR] normal - { [Error: socket hang up] code: 'ECONNRESET' }
+Error: socket hang up
+    at TLSSocket.onHangUp (_tls_wrap.js:1054:19)
+    at TLSSocket.g (events.js:260:16)
+    at emitNone (events.js:72:20)
+    at TLSSocket.emit (events.js:166:7)
+    at endReadableNT (_stream_readable.js:921:12)
+    at nextTickCallbackWith2Args (node.js:442:9)
+    at process._tickCallback (node.js:356:17)

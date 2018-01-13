@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="formate-detection" content="telephone=no, email=no, adress=no">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>商品详情</title>
+  </head>
+  <body>
+    <script>
+      !(function(){
+        window.addEventListener('resize', function(){
+          setFont()
+        })
+        var setFont = function(){
+          var deviceWidth = document.documentElement.clientWidth || document.body.clientWidth;
+          document.documentElement.style.fontSize = deviceWidth /3.75 + 'px';
+        }
+        setFont();
+      }());
+    </script>
+    <div class="wrap">
+      <div class="pd-main">
+        <div class="pd-img">
+          <div class="swiper-container">
+              <div class="swiper-wrapper jsSwiper">
+                  <!--<div class="swiper-slide"><img src="images/tst.jpg"/></div>
+                  <div class="swiper-slide"><img src="images/tst-3.png"/></div>
+                  <div class="swiper-slide"><img src="images/tst.jpg"/></div>
+                  <div class="swiper-slide"><img src="images/tst-3.png"/></div>-->
+              </div>
+              <!-- 分页器 -->
+              <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <div class="pd-content cf">
+          <div class="name-size">
+            <p class="name"></p>
+            <p class="remarks"></p>
+          </div>
+          <div class="likes">
+            <span class="img"></span>
+            <span>收藏</span>
+          </div>
+        </div>
+        <div class="price-track cf">
+          <div class="price">
+            <p></p>
+            <span></span>
+          </div>
+          <div class="track">
+            <span class="address"></span><br>
+            <span class="shipment">运费：8.00</span>
+          </div>
+        </div>
+      </div>
+      <div class="type">
+        <p><span>选择</span><span>商品属性</span></p>
+      </div>
+      <div class="comment">
+        <p>用户评论</p>
+        <div>
+          <div class="cf">
+            <div class="img-boxs">
+              <img src="#"/><span></span>
+            </div>
+            <div>
+              <p class="com-content"></p>
+            </div>
+          </div>
+          <div class="btn-box">
+            <button type="button" name="button">更多评论</button>
+          </div>
+
+        </div>
+      </div>
+      <div class="into">
+        <img src="#" alt=""><span class="shopName"></span><div class="intoIn">进店<span></span></div>
+      </div>
+      <div class="descript">
+        <p>以下是商品描述</p>
+
+      </div>
+    </div>
+    <!-- 提示 -->
+    <div class="pop">
+      <div class="mask"></div>
+      <div class="pop-content">
+        <div class="img-box"><img class="pop-close" src="images/chacha.png"/><img src="images/arrow.png"/></div>
+        <p>1. 点击右上角的 按钮</p>
+        <p>2. 选择"<span class="brower-name"></span>"即可前往</p>
+      </div>
+    </div>
+    <div class="shimt"></div>
+    <div class="buying">立即购买</div>
+    <script src="../libjs/jquery.min.js"></script>
+    <script src="../libjs/swiper.jquery.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

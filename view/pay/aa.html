@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <style type="text/css">
+    .toast {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        opacity: 0.8;
+        background: #000000;
+    }
+    
+    .wrap {
+        margin: 6.125em auto;
+        width: 40.875em;
+        height: 36.9375em;
+        padding-top: 200px;
+        border: 1px solid;
+        background: #fff;
+    }
+    
+    .inputBoxContainer {
+        width: 30.5em;
+        height: 5.5em;
+        margin: 0 auto;
+        position: relative;
+        border: 1px solid;
+    }
+    
+    .inputBoxContainer .bogusInput {
+        /*width: 100%;*/
+        height: 100%;
+        border: #c3c3c3 1px solid;
+        border-radius: 7px;
+        -moz-border-radius: 7px;
+        -webkit-border-radius: 7px;
+        overflow: hidden;
+        position: absolute;
+        z-index: 0;
+    }
+    
+    .inputBoxContainer .realInput {
+        /* width: 100%;*/
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        filter: alpha(opacity=0);
+        -moz-opacity: 0;
+        opacity: 0;
+    }
+    
+    .inputBoxContainer .bogusInput input {
+        padding: 0;
+        width: 16.3%;
+        height: 100%;
+        float: left;
+        background: #eee;
+        text-align: center;
+        font-size: 2.25em;
+        border: none;
+        border-right: #C3C3C3 1px solid;
+    }
+    
+    .inputBoxContainer .bogusInput input:last-child {
+        border: none;
+    }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+    <div class="toast">
+        <div class="wrap">
+            <div class="inputBoxContainer" id="inputBoxContainer">
+                <input type="text" class="realInput" />
+                <div class="bogusInput">
+                    <input type="tel" maxlength="6" disabled/>
+                    <input type="tel" maxlength="6" disabled/>
+                    <input type="tel" maxlength="6" disabled/>
+                    <input type="tel" maxlength="6" disabled/>
+                    <input type="tel" maxlength="6" disabled/>
+                    <input type="tel" maxlength="6" disabled/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    (function() {
+        var container = document.getElementById("inputBoxContainer");
+        boxInput = {
+            maxLength: "",
+            realInput: "",
+            bogusInput: "",
+            bogusInputArr: "",
+            callback: "",
+            init: function(fun) {
+                var that = this;
+                this.callback = fun;
+                that.realInput = container.children[0];
+                that.bogusInput = container.children[1];
+                that.bogusInputArr = that.bogusInput.children;
+                that.maxLength = that.bogusInputArr[0].getAttribute("maxlength");
+                that.realInput.oninput = function() {
+                    that.setValue();
+                }
+                that.realInput.onpropertychange = function() {
+                    that.setValue();
+                }
+            },
+            setValue: function() {
+                this.realInput.value = this.realInput.value.replace(/\D/g, "");
+                console.log(this.realInput.value.replace(/\D/g, ""))
+                var real_str = this.realInput.value;
+                for (var i = 0; i < this.maxLength; i++) {
+                    this.bogusInputArr[i].value = real_str[i] ? real_str[i] : "";
+                }
+                if (real_str.length >= this.maxLength) {
+                    this.realInput.value = real_str.substring(0, 6);
+                    this.callback();
+                }
+            },
+            getBoxInputValue: function() {
+                var realValue = "";
+                for (var i in this.bogusInputArr) {
+                    if (!this.bogusInputArr[i].value) {
+                        break;
+                    }
+                    realValue += this.bogusInputArr[i].value;
+                }
+                return realValue;
+            }
+        }
+
+        boxInput.init(function() {
+	        getValue();
+	    });
+	    $(".realInput").focus();
+    })()
+
+     /*document.getElementById("confirmButton").onclick = function() {
+         getValue();
+     }*/
+
+     function getValue() {
+          boxInput.getBoxInputValue();
+     }
+    </script>
+</body>
+
+</html>

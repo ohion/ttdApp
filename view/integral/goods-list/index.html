@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no, email=no, adress=no">
+    <link rel="stylesheet" href="css/index.css">
+    <title>产品列表</title>
+</head>
+<body>
+<script>
+    window.addEventListener('resize', function(){
+      setFont();
+    });
+    function setFont(){
+      var deviceWidth = document.documentElement.clientWidth || document.body.clientWidth;
+      if(deviceWidth > 640 ){
+        deviceWidth = 640;
+      }
+      document.documentElement.style.fontSize = deviceWidth / 3.75 + 'px';
+    }
+    setFont();
+</script>
+<div class="wrap">
+    <div class="nav">
+        <ul>
+            <li>综合</li>
+            <li>销量</li>
+            <li class="nobar"><img class="jsChangeArray deft" src="images/1.png"/></li>
+        </ul>
+    </div>
+    <div class="main">
+        <ul class="default">
+            <li>
+                <div>
+                    <img src="images/1.png"/>
+                    <div class="content">
+                        <p>BOSE QuietComfort 35无线消噪耳机qc35 蓝牙消噪头戴式耳机</p>
+                        <div>
+                            <span class="price">￥2000.00</span><br>
+                            <span class="integral">+积分1000</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="images/1.png"/>
+                    <div class="content">
+                        <p>BOSE QuietComfort 35无线消噪耳机qc35 蓝牙消噪头戴式耳机</p>
+                        <div>
+                            <span class="price">￥2000.00</span><br>
+                            <span class="integral">+积分1000</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="images/1.png"/>
+                    <div class="content">
+                        <p>BOSE QuietComfort 35无线消噪耳机qc35 蓝牙消噪头戴式耳机</p>
+                        <div>
+                            <span class="price">￥2000.00</span><br>
+                            <span class="integral">+积分1000</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="images/1.png"/>
+                    <div class="content">
+                        <p>BOSE QuietComfort 35无线消噪耳机qc35 蓝牙消噪头戴式耳机</p>
+                        <div>
+                            <span class="price">￥2000.00</span><br>
+                            <span class="integral">+积分1000</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="../libjs/jquery.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

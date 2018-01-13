@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width" />
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/payRegister.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+     <script type="text/javascript">
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null)
+                return unescape(r[2]);
+            return null;
+        }
+        var getIrefereeId = getQueryString("lrefereeId"); // 获取url当前平台号参数
+        var refuserid = getQueryString("refuserid"); // 获取用户ID参数  
+        var orderNo = getQueryString('order');//获取消费订单号
+        var type = getQueryString("type"); //web微信支付url参数type为1时隐藏支付按钮  
+        if(!type){
+            var curpay = "http://mepay.tymplus.com/WebConsume/payNoPhone2.html";
+                //跳转到支付页面
+            location.href = curpay + "?lrefereeId=" + getIrefereeId + "&refuserid=" + refuserid+ "&orderNo=" + orderNo;
+        }
+        $(function(){
+            if (type != "" && type == 1) {  
+                $('.type').css("display", "none");
+            }else{//跳转至付款页面
+                var curpay = "http://mepay.tymplus.com/WebConsume/payNoPhone2.html";
+                //跳转到支付页面
+                location.href = curpay + "?lrefereeId=" + getIrefereeId + "&refuserid=" + refuserid+ "&orderNo=" + orderNo;
+            }
+            //注册天天兑用户 
+            $('#register').click(function() {
+                location.href = "http://appbs.tymshop.com:8080/appbs/TTD-register/register_app.html?lrefereeId=" + getIrefereeId + "&refuserid=" + refuserid;
+            });
+            //下载天天兑APP
+            $('#download').click(function() {
+                location.href = "http://appbs.tymshop.com:8080/appbs/TTD-register/download.html";
+            });  
+        })
+        
+        
+    </script>
+
+</head>
+
+<body>
+    <div class="type">
+        <div id="curpay">
+            <div id="font">
+                <div class="title">向天天兑联盟商家</div>
+                <div id="payBtn">立即付款</div>
+            </div>
+        </div>
+        <div class="paytips">付款成功后请点击“返回商家”领取购物币</div>
+    </div>
+    <div id="register">
+        <div>
+            <div>注册天天兑用户</div>
+            <div id="newUse"></div>
+        </div>
+    </div>
+    <div id="download">
+        <div>
+            <div>下载天天兑app</div>
+            <div id="newUse"></div>
+        </div>
+    </div>
+    <div class="paytips">如已注册天天兑请直接下载</div>
+   
+</body>
+
+</html>

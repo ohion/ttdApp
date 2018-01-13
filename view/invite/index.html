@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">   <!--设置缓存的页过期之前的分钟数。若用户在页过期之前返回该页那么就显示缓存的版本-->
+    <meta name="msapplication-tap-highlight" content="no"><!--windows phone 点击无高光-->
+    <meta name="format-detection" content="telephone=no"><!-- 禁止识别电话号码 -->
+	<title>邀请</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" href="toast/toast.css" />
+    <script type="text/javascript" src="toast/toast.js"></script>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+	<div class="container flex-center">
+		<div class="box1">
+			<div class="radbox1"></div>
+			<!-- <div class="box1-info"> -->
+				<img id="head" src="image/ttd.png"></img>
+				<p id="title"></p>
+				<div class="reginfo widthradius">
+					<p>注册送红包</p>
+					<p>20 ~ 50</p>
+					<p>赶紧输入手机号码注册吧</p>
+
+				</div>
+				<div class="radbox"></div>
+
+			<!-- </div> -->
+			
+			
+		</div>
+		<div class="box2">
+			
+			<div class="info">
+				<form class="regdetail widthradius clearfloat">
+					<label class="flex-mid"><img src="image/phone_icon.png"><input type="text" name="phone" placeholder="请输入手机号" id="phone"></label>
+					<label class="left"><img src="image/yzm_icon.png" class="left"><input type="text" name="imgcode" placeholder="请输入短信验证码" id="imgcode" class="left"><button type="button" class="right" id="getCode">获取验证码</button></label>
+				</form>
+				<img src="image/regbtn.png" id="regBtn">
+			</div>
+			 
+			
+		</div>
+
+		
+	</div>
+	<!-- 验证码弹框 -->
+    <div id="imgCodeDialog">
+        <div class="imgcode2">
+            <div class="closedialog"></div>
+            <div class="imgcodebox">
+                 <img id="imgCode" src="" />
+                <div id="imgCodeReset">刷新图片&gt;</div>
+                <div>
+                    <span id="labImgCode">图片验证码:</span><input type="text" maxlength="6" id="imgCodeString" placeholder="请输入图片验证码"/>
+                </div>
+            </div>
+            <button id="okImgCode">确认</button><br />
+        </div>
+        
+    </div>
+
+
+
+
+	 <div class="bottom">
+        <div class="img-box">
+            <img src="./image/dete.png" alt="" class="delad"><img src="./image/ttd.png" alt="天天兑" class="ttd">
+        </div>
+        <div>
+            <p>天天兑APP</p>
+            <p>(一个可以为你省钱的APP)</p>
+        </div>  
+        <div class="img-box button-box">
+            <button id="download">立即下载</button>
+        </div>
+        
+    </div>
+</body>
+</html>

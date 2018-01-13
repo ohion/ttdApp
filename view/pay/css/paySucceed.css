@@ -1,0 +1,205 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", "微软雅黑", Helvetica, Arial, sans-serif;
+}
+
+.icon {
+    padding-top: 20px;
+}
+
+#pay_money {
+    font-size: 21pt;
+    color: #FF4848;
+    text-align: center;
+    margin-bottom: 6%;
+}
+
+.info {
+    padding: 12pt;
+    border-bottom: 1px solid #DFDEE8;
+}
+
+.padding {
+    padding: 0 12pt;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+#giving {
+    text-align: right;
+    color: #FF4848;
+}
+
+
+#downloadBtn {
+    width: 100%;
+    background: #FFD006;
+    font-size: 15pt;
+    position: fixed;
+    bottom: 0;
+}
+
+#finishBtn {
+    background: #E6E5EC;
+    border-radius: 44px;
+    margin-bottom: 26pt;
+    font-size: 15pt
+}
+
+.tips {
+    font-size: 10.5pt;
+    opacity: 0.6;
+    color: #18253D;
+}
+
+#zf_phone {
+    color: #18253D;
+}
+
+#phoneTips {
+    margin-top: 20px;
+    margin-bottom: 7px;
+}
+
+.whiteArea {
+    padding: 4pt 0;
+    background-color: #fff;
+}
+
+.paddingLeft {
+    padding-left: 8pt;
+}
+
+img {
+    margin-right: 8pt;
+    vertical-align: middle;
+    width: 22pt;
+}
+
+#code img {
+    margin-right: 12pt;
+}
+
+#code input,
+#zf_phone input {
+    margin-left: 12pt;
+    font-size: 11pt;
+    color: #18253D;
+    border: none;
+    background-color: #fff;
+    width: 37%;
+}
+
+#code input {
+    width: 28%;
+}
+
+#getCoin {
+    background: #FF4848;
+    border-radius: 44px;
+    margin: 25px auto;
+    font-size: 15pt;
+    color: #fff;
+    border: none;
+}
+
+#getCodeBtn {
+    background: #FFD006;
+    border-radius: 37px;
+    font-size: 15px;
+    border: none;
+    height: 37px;
+    line-height: 37px;
+    width: 92px;
+}
+
+
+#productList {
+    width: 96%;
+    margin: auto;
+}
+
+.goods {
+    background: #FFFFFF;
+    box-shadow: 0 1px 0 0 rgba(180, 169, 169, 0.50);
+    border-radius: 20px;
+    width: 48%;
+    height: 243px;
+    background: #fff;
+    float: left;
+    margin-left: 4px;
+    margin-bottom: 4px;
+}
+
+.goodsImg {
+    width: 100%;
+    height: 181px;
+    border-radius: 20px 20px 0 0;
+    background: pink;
+}
+
+.goodsName {
+    width: 167px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 8px;
+}
+
+#imgCoin {
+    margin-bottom: 4px;
+    margin-right: 3px;
+}
+
+.goodsPrice {
+    color: #FF4848;
+    margin-top: 9px;
+    margin-left: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+
+@media screen and (min-device-width:320px) and (max-device-width:359px) {
+    .info {
+        padding: 8px 12pt;
+    }
+    #pay_money {
+        font-size: 16pt;
+        margin-bottom: 1%;
+    }
+    .goodsName {
+        width: 137px;
+    }
+    #code input {
+        margin-left: 24pt;
+        width: 22%;
+    }
+    #getCodeBtn {
+        font-size: 13px;
+    }
+}

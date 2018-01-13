@@ -1,0 +1,137 @@
+#topimg1,#topimg2,#topimg3,#topimg4{
+    display: none;
+}
+.part1_left img,.part2_right img,.part3_left img,.part4_right img,.part5_left img{
+    -webkit-box-shadow: 6px 6px 7px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 6px 6px 7px rgba(0, 0, 0, 0.5);
+    -o-box-shadow: 6px 6px 7px rgba(0, 0, 0, 0.5);
+    box-shadow: 6px 6px 7px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+}
+#topimg5{
+    float: none;
+}
+.part1_left{
+    display: inline;
+    float: left;
+    height: 100%;
+    width: 34%;
+    text-align: right;
+    overflow: hidden;
+    padding-right: 18px;
+}
+.part1_right{
+    display: inline;
+    height: 100%;
+    width: 55%;
+    float: left;
+}
+.middle_hide{
+    display: none;
+}
+.part1_right_top{
+    width: 50%;
+    height: 22%;
+}
+.part1_right_top img{
+    display: none;
+}
+.part1_right_middle{
+    width: 100%;
+    height: 40%;
+    padding-left: 0%;
+}
+.part1_right_middle_smallcloud{
+    display: none;
+}
+.part1_right_bottom{
+    width: 100%;
+    height: 33%;
+    padding-left: 15%;
+}
+.part1_right_bottom_left{
+    display: none;
+}
+.part1_right_bottom_right{
+    width: 80%;
+    height: 100%;
+    background-image: url("../images/erweima.png");
+    background-size: cover;
+    visibility: hidden;
+}
+
+.part2_left{
+    text-align: right;
+}
+.part2_right{
+    text-align: left;
+}
+.part2_left_top,.part2_left_center_fonthide{
+    display: none;
+}
+.part2_left_center{
+    height: 67%;
+    padding-top: 15%;
+}
+.part2_left_bottom{
+    height: 33%;
+    padding-right: 20%;
+}
+.part2_left_center_left,.part2_left_center_right{
+    float: left;
+}
+.part2_left_center_left{
+    width: 20%;
+    height: 100%;
+}
+.part2_left_center_right{
+    width: 80%;
+    height: 100%;
+    text-align: center;
+}
+
+.part3_right_center_br2{
+    display: none;
+}
+.part3_right_center_br1,.part3_right_center_br3,.part4_left_center_br1{
+    display: inline;
+}
+
+.part3_right_top{
+    display: none;
+}
+.part3_right_center{
+    padding-top: 14%;
+    height: 60%;
+}
+.part3_right_bottom{
+    height: 35%;
+}
+
+.part4_left_top{
+    display: none;
+}
+.part4_left_center{
+    padding-top: 14%;
+    height: 65%;
+}
+.part4_left_bottom{
+    height: 35%;
+}
+
+.part5_right_top{
+    display: none;
+}
+.part5_right_center{
+    padding-top: 20%;
+    height: 65%;
+}
+.part5_right_center_br1{
+    display: inline;
+}
+.part5_right_center_br2{
+    display: none;
+}
+.part5_right_bottom{
+    height: 35%;
+}

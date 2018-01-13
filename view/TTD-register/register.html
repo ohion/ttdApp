@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width" />
+    <title>注册</title>
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" type="text/css" href="toast/toast.css" />
+    <script type="text/javascript" src="toast/toast.js"></script>
+    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/jquery.md5.js"></script>
+    <script src="js/TymClientLock.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
+        location.href = "../pay/pay_register.html?lrefereeId=" + getIrefereeId + "&refuserid=" + refuserid;
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="wrapper">
+            <div id="title">
+                <div class="info">当前关注平台号：<span id="lrefereeId"></span>&nbsp;&nbsp;用户ID：<span id="refuserid"></span></div>
+                <a href="#" class="register active">注册</a>
+            </div>
+            <div id="userinput">
+                <div id="iphone">
+                    <img src="img/dlzc_shouji_icon_nor@3x.png" />
+                    <input id="phone" type="text" placeholder="输入注册手机号" maxlength="11" />
+                    <hr/>
+                </div>
+                <div id="code">
+                    <img src="img/dlzc_yzm_icon_nor@3x.png" />
+                    <input id="checkcode" type="text" placeholder="输入验证码" maxlength="6" />
+                    <button id="getCode" value="">获取验证码</button>
+
+                    <button id="getCode1" value="">获取验证码</button>
+                    <hr/>
+                </div>
+                <div id="pwd">
+                    <img src="img/dlzc_mima_icon_nor@3x.png" />
+                    <input id="password" type="password" placeholder="设置登录密码" maxlength="16" />
+                    <img class="visible" src="img/qb_xsje_butt_sel_2x.png" style="width: 32px;height: 15px" />
+                    <hr/>
+                </div>
+            </div>
+            <div id="agreement">
+                <a href="../publichttp/serviceagreement_new/mepay_software_permit_agreement.html">
+                    <div>《天天兑软件服务协议》</div>
+                </a>
+                <a href="../publichttp/serviceagreement_new/mepay_user_service_agreement.html">
+                    <div>《天天兑用户服务协议》</div>
+                </a>
+            </div>
+            <div id="submit">
+                <button class="btn" id="register">注册</button>
+            </div>
+            <button class="btn" id="downloadBtn"><a href="#" style="color:#000;">下载天天兑</a></button>
+        </div>
+        
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+body {
+    background: #fff;
+    margin: 0px!important;
+    padding: 0;
+    font-family: "Helvetica Neue","微软雅黑",Helvetica,Arial,sans-serif;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#shadowTips {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.shadowTips_top {
+    width: 100%;
+    height: 2%;
+}
+
+.shadowTips_mid {
+    width: 100%;
+    height: 20%;
+}
+
+.shadowTips_mid_left {
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding-left: 5%;
+    text-align: left;
+}
+
+.shadowTips_mid_right {
+    float: right;
+    width: 45%;
+    height: 100%;
+    text-align: right;
+}
+
+.shadowTips_bottom_tipsone,
+.shadowTips_bottom_tipstwo {
+    width: 100%;
+    height: 10%;
+    font-size: 20px;
+    padding-left: 0%;
+}
+
+.shadowTips_bottom_tipsone img {
+    border-radius: 10px;
+}
+div.title {
+    background-color: #FFD006;
+    color: #18253D;    
+    font-size: 16pt;    
+    height: 2.5em;
+    line-height: 2.5em;
+}
+div.downloadBtn {
+    width: 80%;
+    margin: 0 auto;        
+    border-radius: 2em;    
+    margin-top: 8%;
+
+}
+.redBtn{
+    background-color: #FF4848;
+    color: #fff;
+    font-size: 14pt;
+    height: 2.2em;
+    line-height: 2.2em;  
+}
+
+.lookBtn{
+    background-color: #FFD006;
+    color: #000;
+    font-size: 14pt;
+    height: 2.2em;
+    line-height: 2.2em;  
+}
+
+.left {
+    float: left;
+    margin-top: 8px;
+}
+
+.right {
+    float: left;
+    margin-top: 8px;
+    width: 39%;
+    margin-left: 8px;
+    background: #eef1f4;
+    border-radius: 1.5em;
+    min-height: 16em;
+}
+
+.box {
+    width: 39%;
+    margin-left: 10%;
+    background: #eef1f4;
+    border-radius: 1.5em;
+    min-height: 16em;
+}
+
+.logo {
+    margin-top: 34px;
+    margin-bottom: 2%;
+    width: 23px;
+}
+
+.red {
+    color: #ff4848;
+    font-size: 14pt;
+    margin-top: 25%;
+}
+.support {
+	font-size: 14pt;
+}
+#linkPage {
+    width: 80%;
+    margin: 0 auto;
+    height: 2.5em;
+    font-size: 14pt;
+    line-height: 2.5em;
+    background-color: #ff4848;
+    border-radius: 2em;
+    color: #fff;
+}
+#course {
+    margin:32px auto;
+}
+
+@media screen and (max-width: 420px) {
+    .box,
+    .right {
+        min-height: 268px !important;
+    }
+    #linkPage,.red, .support {
+        font-size: 1em;
+    }
+    .redBtn,.lookBtn {
+        font-size: 1em;
+    }
+}
+
+a img {
+    width: 21px;
+    vertical-align: middle;
+    margin-left: 5px;
+}

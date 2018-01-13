@@ -1,0 +1,184 @@
+/**/
+body, h1, h2, h3, ul, li {padding:0; margin:0;}
+ul, li {list-style:none;margin: 0;}
+body {font-size:1.4rem;background:url(../images/weixin/weixin_bg1d20af.jpg) repeat-x; }
+p { margin:0.33em 0;}
+h2 {font-size:1.4rem; font-weight:bold;}
+img {border:0;}
+a {text-decoration:none; color:#609700; cursor:pointer; outline:none}
+a:hover {text-decoration:underline; color:#333; }
+.clr {clear:both; height:1px; overflow:hidden;}
+.super_size{font-size:24px; }
+.blue{color:#545f77}
+.skyblue{color:#0068b7}
+.txt_red {color:#C00;}
+.bold{font-weight:bold;}
+.graytext { color:#999; }
+.f_size{font-size:12px;}
+.left{float:left;}
+.right{float:right;}
+/* ÕýÎÄ */
+.content {position:relative;}
+.intro h1 {padding:45px 0 3px; font-size:32px;}
+.intro p {font-size:16px; color:#979797;}
+a.btn_download {display:block; width:224px; height:64px; margin-top:12px;background:#348903;position:relative;color:#fff;font-size:16px;font-weight:bold;text-align:center;line-height:64px;}
+a.btn_download:hover b{background-position:-1px -64px;}
+a.btn_download_fromphone:hover{
+	background-position: -616px -56px;
+}
+
+.footer {clear:both; padding:23px 0 4px; margin-top:22px; border-top:1px solid #d4dadf; font-size:12px; text-align:center; color:#D8D8D8;}
+.footer a {margin:0 4px;}
+.footer a:link, .footer a:visited{ color:#888; text-decoration: none; }
+.footer a:hover{ color:#888; text-decoration: underline; }
+.footer p {color:#888888;font-size:11px; margin: 5px 0;}
+
+#mask {position:absolute; z-index:100; top:0px; left:0; width:100%;height:100%;min-height:830px;*height:830px;background:#000;  opacity:0.8; filter:alpha(opacity=80);}
+#viewer {position:absolute; z-index:101; top:0px; left:0; width:100%; height:100%;}
+#viewer img {display:none; position:absolute;top:8px;left:8px; border:9px solid #555;}
+
+.sec_body {background: #dedee0 url(../images/weixin/bodybg0ec594.jpg);}
+.sec_body .wrap{background:url(../images/weixin/weixin_bg_sec0ec594.jpg) repeat-x;}
+.sec_body .content{background-color:#fff; margin-top:25px; border:1px solid #cac9c9; -moz-border-radius:5px; -webkit-border-radius:5px; overflow:hidden; position:relative;}
+.sec_body .content p{font-size:14px; line-height:1.5;}
+.content_top	{background:height:54px; padding:14px 0 0 20px; font-size:1.8rem; /*font-family:"Î¢ÈíÑÅºÚ","ºÚÌå", "Lucida Grande", Verdana, sans-serif;*/font-family:"Î¢ÈíÑÅºÚ","ºÚÌå", "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif; -moz-border-radius-topleft:5px; -moz-border-radius-topright:5px; -webkit-border-top-left-radius:5px; -webkit-border-top-right-radius:5px;}
+.content_top_l	{background:height:50px; width:10px; position:absolute; top:0; left:0;}
+.content_top_r	{background:height:50px; width:10px; position:absolute; top:0; right:0;}
+
+.sys-list{overflow:hidden;*zoom:1;}
+.sys-item{float:left;overflow:hidden;width:16.666%;}
+.sys-bd{display:block;height:250px;text-align:center;border-right:1px solid #D7DADE;}
+.iphone-bd{}
+.android-bd{}
+.symbian-bd{}
+.s40-bd{border-color: transparent;}
+.sys-btn{display:inline-block;position:relative;width:140px;height:60px;margin-top:80px;}
+.ios-bd .sys-btn{width: 140px; height: 62px;}
+.symbian-bd .sys-btn,.ios-bd .sys-btn,.wp-bd .bb-btn,.bb-bd .sys-btn{
+	margin-top:37px;
+}
+.wp-bd .sys-btn{
+	margin-top: 15px;
+}
+
+.sys-name{position:absolute;top:0;left:0;width:100%;height:100%;background:transparent url('../images/weixin/mobile_system_new_41c7d54.jpg') no-repeat;}
+.iphone-logo{background-position:0 0;}.sys-btn:hover .iphone-logo{background-position:-140px -1px;}
+.android-logo{background-position:0 -57px;}.sys-btn:hover .android-logo{background-position:-139px -57px;}
+.wp-logo{background-position:0 -111px;}.sys-btn:hover .wp-logo{background-position:-139px -111px;}
+.win-logo{
+	height: 50px;
+	margin-top: 8px;
+	background-position: 0 -720px;
+}
+.sys-btn:hover .win-logo{
+	background-position: -139px -720px;
+}
+.wp8-logo{background-position:0 -168px;}.sys-btn:hover .wp8-logo{background-position:-139px -168px;}
+.v3-logo{background-position:0 -221px;}.sys-btn:hover .v3-logo{background-position:-139px -221px;}
+.v5-logo{background-position:0 -278px;}.sys-btn:hover .v5-logo{background-position:-139px -278px;}
+.bb-logo{background-position:0 -335px;}.sys-btn:hover .bb-logo{background-position:-140px -335px;}
+.bb-z10-logo{background-position:0 -434px;}.sys-btn:hover .bb-z10-logo{background-position:-141px -434px;}
+.s40-logo{background-position:0 -384px;}.sys-btn:hover .s40-logo{background-position:-141px -384px;}
+.iphone-txt-logo{background-position:right -660px;}.sys-btn:hover .iphone-txt-logo{background-position:right -593px;}
+.mac-logo{background-position:2px -660px;}.sys-btn:hover .mac-logo{background-position:2px -593px; }
+
+
+
+a.btn_mobile_min			{background:#348903; height:46px; width:129px; display:block; margin-top:2px;line-height:46px;text-align:center;color:#fff;position:relative;overflow:hidden;}
+a.btn_mobile_min:hover{background-color:#48A711;}
+.btn_mobile_min b			{background:url(../images/weixin/weixin_icon_new1c00a1.png) no-repeat; height:46px; width:129px; display:block;  position:absolute; top:0;left:0;}
+a.btn_bb_min b              {background-position:0 -1714px;}
+a.btn_bb_min:hover b        {background-position:-160px -1714px;;}
+a.btn_bb_z10_min b              {background-position:0 -2030px;}
+a.btn_bb_z10_min:hover b        {background-position:-160px -2030px;;}
+a.btn_iphone_min b			{background-position:0 -672px;}
+a.btn_iphone_min:hover b	{background-position:-160px -672px;}
+a.btn_android_min b			{background-position:0 -800px;}
+a.btn_android_min:hover b	{background-position:-160px -800px;}
+a.btn_s60v3_min b			{background-position:0 -736px;}
+a.btn_s60v3_min:hover b		{background-position:-160px -736px;}
+a.btn_s60v5_min b			{background-position:0 -864px;}
+a.btn_s60v5_min:hover b		{background-position:-160px -864px;}
+a.btn_wp_min b      {background-position:0 -1839px;}
+a.btn_wp_min:hover b    {background-position:-160px -1839px;}
+a.btn_wp8_min b			{background-position:0 -1777px;}
+a.btn_wp8_min:hover b		{background-position:-160px -1777px;}
+a.btn_s40_min b			{background-position:0 -1903px;}
+a.btn_s40_min:hover b		{background-position:-160px -1903px;}
+a.btn_mac_min b			{background-position:-1px -2094px;}
+a.btn_mac_min:hover b	{background-position:-161px -2094px;}
+
+.mobile_system .btn_s60v3_min{float:left; margin:20px 5px 0 32px;_margin:20px 5px 0 15px;}
+.mobile_system .btn_s60v5_min{float:left; margin-top:20px}
+
+
+.sub_list h3		{font-size:16px; padding:8px 0 0 53px; }
+.model_box		{background:#fff; display:none; padding:20px 42px 27px 106px;_padding:20px 42px 27px 110px; border-top:1px solid #e1e3e6;}
+.model_box a		{margin-right:9px;}
+.model_box p	{ width:100%;clear:left;padding:15px 0 0; }
+.list_bottom	{-moz-border-radius-bottomleft:5px; -moz-border-radius-bottomright:5px; -webkit-border-bottom-left-radius:5px; -webkit-border-bottom-right-radius:5px;}
+
+.left_bar		{float:left; padding:0 35px 0 35px;}
+.right_bar		{margin-left:690px; *margin-left:706px; padding:0 20px 20px 15px;border-left:1px solid #d8d9dc;}
+.right_bar h2	{margin:20px 0 10px 0;}
+.download_auto	{margin:20px 0 52px 104px;}
+.download_method{padding:0 0 220px 0; position:relative;}
+.download_method h2{border-bottom:1px solid #d8d9dc; padding:0 0 10px 0; font-size:18px; /*font-family:"Î¢ÈíÑÅºÚ","ºÚÌå", "Lucida Grande", Verdana, sans-serif;*/font-family:"Î¢ÈíÑÅºÚ","ºÚÌå", "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;}
+.download_method p{padding:10px 0 20px 0;}
+.other_method	{}
+.other_method li	{list-style:inside disc; margin-bottom: 28px; color:#bbb;}
+.other_method li span{font-size:12px;}
+.other_method li span,
+.page_intro span	{font-weight:bold; color:#000;}
+.right_bar .other_method li p{font-size:12px;}
+.other_method li p label{color:#609700}
+.other_method li p,
+.page_intro p	{color:#666; font-weight:normal; margin-left:14px}
+.oneline		{background:#d8d9dc; height:1px; overflow:hidden}
+.dlink li.on .model_box{display:block;overflow:hidden;zoom:1;position:relative;}
+/* FAQ */
+.page_faq		{padding:40px 45px 0;}
+.page_faq h3		{font-size:14px;font-weight:bold;}
+.content .page_faq p{font-size:1.6rem;margin:0 0 6px;}
+.none{display:none;}
+.page_faq_list h2{font-size:16px; border-bottom:1px solid #CAC9C9; padding-bottom:5px;}
+.page_faq_list ul {margin:10px 0 45px;}
+.page_faq_list ul li{line-height:2; list-style:disc inside; color:#999}
+.page_faq_list ul li span.gray{margin-left:15px;}
+.sectionTitle{
+	margin-bottom: 15px;
+}
+/* weixin.html */
+
+.tip_ico { background-position:-225px 0; }
+
+.intro .title_h1, .intro_p { /*font-family:"Î¢ÈíÑÅºÚ","ºÚÌå", "Lucida Grande", Verdana, sans-serif;*/font-family:"Î¢ÈíÑÅºÚ","ºÚÌå", "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;}
+.intro {/*font-family:"Lucida Grande", Verdana, sans-serif; */font-family:12px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;}
+
+/* .func a {cursor:default;} */
+
+.img_intro .nearBy{position:absolute; top:335px; left:30px;width:100%;}
+.img_intro .nearBy h2 { font-size:16px; }
+.img_intro .nearBy h2,
+.img_intro .nearBy p { margin-left:70px; }
+.img_intro #nearByIcon { float:left;width:70px; }
+
+.img_intro #currentPic { left:180px; }
+		
+
+.descforv3 { }
+.descforv5 { }
+
+.weixin_home_link li{
+
+	line-height: 1.8;
+	color: #999;
+	margin-right:30px;
+}
+.weixin_home_link li a{
+	margin-left:-7px;
+}
+/*agreement*/
+.sign{text-align:right;}
+.em_text{font-style:normal;font-weight: bold;}
+.indent{text-indent:2em;}

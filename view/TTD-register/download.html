@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width" />
+    <title>下载天天兑</title>
+    <link rel="stylesheet" type="text/css" href="css/download.css" />
+</head>
+
+<body style="text-align: center;margin:0;">
+    <a href="" class="toDownloadPage" style="text-decoration: none;">
+        <div class="downloadBtn title">天天兑下载</div>
+    </a>
+    <div class="left box">
+        <img class="logo" src="img/xz_apple_icon_nor.png" />
+        <div class="support">支持ios7.0以上</div>
+        <a href="" class="toDownloadPage" style="text-decoration: none;">
+            <div class="downloadBtn redBtn">立即下载<img src="img/xz_xiazai_butt_nor.png" /></div>
+        </a>
+        <!-- <div id="course">
+            <div class="support">ios版本安装教程</div>
+            <a href="ISODownload.html" style="text-decoration: none;">
+                <div class="downloadBtn lookBtn" style="margin-top:2%;">立即查看<img src="img/xz_iosjiaoc_butt_nor2.png" /></div>
+            </a>
+        </div> -->
+    </div>
+    <div class="right">
+        <img class="logo" src="img/xz_Android_icon_nor.png" />
+        <div class="support">Android2.3以上</div>
+        <a href="" class="toDownloadPage" style="text-decoration: none;">
+            <div class="downloadBtn redBtn">立即下载<img src="img/xz_xiazai_butt_nor.png" /></div>
+        </a>
+    </div>
+    <div id="shadowTips">
+        <div class="shadowTips_top"></div>
+        <div class="shadowTips_mid">
+            <div class="shadowTips_mid_left"><img src="img/chacha.png" width="30px" height="30px" /></div>
+            <div class="shadowTips_mid_right"><img src="img/arrow.png" height="100%" /></div>
+        </div>
+        <div class="shadowTips_bottom_tipsone">1. 点击右上角的 <img src="img/qqshare.jpg" /> 按钮 </div>
+        <br>
+        <div class="shadowTips_bottom_tipstwo">2. 选择"<span id="phone_browser_word"></span>"即可下载</div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script>
+    //判断是否手机端
+    function IsMobile() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = ["Android", "iPhone",
+            "SymbianOS", "Windows Phone"
+        ];
+        var flag = false;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = true;
+                break;
+            }
+        }
+        return flag;
+    }
+    // 获取url参数
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return unescape(r[2]);
+        return null;
+    }
+
+    $(document).ready(function() {
+        var explorer = navigator.userAgent;
+        if (IsMobile()) {
+            $(".toDownloadPage").removeAttr("href"); //移除href属性
+            //如果在QQ或微信打开则显示温馨提示
+            if ((explorer.indexOf("MicroMessenger") > 0 || explorer.indexOf("QQ/") > 0)) {
+                var shareImg = ''; //iPhone、android手机微信图标不同
+                if (navigator.userAgent.indexOf("MicroMessenger") > 0) {
+                    if (/(iPhone)/i.test(navigator.userAgent)) {
+                        shareImg = "./img/weixinshare.jpg";
+                    } else if (/(Android)/i.test(navigator.userAgent)) {
+                        shareImg = "./img/andr_weixin_share.jpg";
+                    }
+                } else if (navigator.userAgent.indexOf("QQ/") > 0) {
+                    shareImg = "./img/qqshare.jpg";
+                }
+                if (/(iPhone)/i.test(navigator.userAgent)) {
+                    $("#phone_browser_word").text("在Safari中打开");
+                } else if (/(Android)/i.test(navigator.userAgent)) {
+                    $("#phone_browser_word").text("在浏览器中打开");
+                }
+                $(".shadowTips_bottom_tipsone img").attr("src", shareImg);
+
+                $(".toDownloadPage").click(function() {
+                    $("#shadowTips").fadeIn(300);
+                });
+                $(".shadowTips_mid_left img").click(function() {
+                    $("#shadowTips").fadeOut(300);
+                });
+            } else if (/(iPhone)/i.test(explorer)) {
+                //给按钮设置点击链接  ios下载
+                $(".toDownloadPage").click(function() {
+                    // location.href = "https://itunes.apple.com/cn/app/ben-de-sheng-huo-quan/id1023314197?mt=8";
+                    location.href = "https://itunes.apple.com/us/app/tian-tian-dui/id1153391006?mt=8";
+                    //location.href = "https://beta.bugly.qq.com/vj1q";
+                });
+            } else if (/(Android)/i.test(explorer)) {
+                //给按钮设置点击链接  安卓下载
+                $(".toDownloadPage").click(function() {
+                    location.href = "http://tiyoumeapp.oss-cn-shenzhen.aliyuncs.com/TianTianDui.apk";
+                });
+            }
+        } else {
+            // 设置下载客户端按钮平台号传参
+            if (getQueryString("lrefereeId") != null) {
+                var url = "../download/index.html?lrefereeid=" + getQueryString("lrefereeId");
+                $(".toDownloadPage").attr("href", url);
+            }
+        }
+    });
+    </script>
+</body>
+
+</html>

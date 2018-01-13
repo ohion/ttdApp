@@ -1,0 +1,137 @@
+[2017-09-25 00:03:14.147] [INFO] normal - { phone: '18088821980',
+  code: '123123',
+  password: 'b3f821e872c29b660f737b843f0a667e',
+  platformID: '7612486',
+  refuserid: '50037' }
+[2017-09-25 00:03:14.149] [INFO] normal - { sAccount: '18088821980',
+  sNickName: '未设置昵称',
+  sPassword: 'b3f821e872c29b660f737b843f0a667e',
+  iSex: 1,
+  sProvince: '',
+  sCity: '',
+  sSignature: '',
+  sEmail: '',
+  sHeadImage: '',
+  iPhoneAuth: 1,
+  lPlatformID: '7612486',
+  lPushManId: '50037',
+  sCode: '123123' }
+[2017-09-25 00:03:14.257] [INFO] normal - { iRet: -8, sMsg: '手机短信验证码不存在' }
+[2017-09-25 00:03:15.937] [INFO] normal - { phone: '18088821980',
+  code: '123123',
+  password: 'b3f821e872c29b660f737b843f0a667e',
+  platformID: '7612486',
+  refuserid: '50037' }
+[2017-09-25 00:03:15.938] [INFO] normal - { sAccount: '18088821980',
+  sNickName: '未设置昵称',
+  sPassword: 'b3f821e872c29b660f737b843f0a667e',
+  iSex: 1,
+  sProvince: '',
+  sCity: '',
+  sSignature: '',
+  sEmail: '',
+  sHeadImage: '',
+  iPhoneAuth: 1,
+  lPlatformID: '7612486',
+  lPushManId: '50037',
+  sCode: '123123' }
+[2017-09-25 00:03:15.989] [INFO] normal - { iRet: -8, sMsg: '手机短信验证码不存在' }
+[2017-09-25 00:29:08.663] [INFO] normal - { phone: '13411367357',
+  code: '914535',
+  password: 'b3f821e872c29b660f737b843f0a667e',
+  platformID: '7612486',
+  refuserid: '50037' }
+[2017-09-25 00:29:08.665] [INFO] normal - { sAccount: '13411367357',
+  sNickName: '未设置昵称',
+  sPassword: 'b3f821e872c29b660f737b843f0a667e',
+  iSex: 1,
+  sProvince: '',
+  sCity: '',
+  sSignature: '',
+  sEmail: '',
+  sHeadImage: '',
+  iPhoneAuth: 1,
+  lPlatformID: '7612486',
+  lPushManId: '50037',
+  sCode: '914535' }
+[2017-09-25 00:29:08.730] [INFO] normal - { iRet: -8, sMsg: '手机短信验证码不存在' }
+[2017-09-25 00:29:42.741] [INFO] normal - { phone: '13411367357',
+  code: '914535',
+  password: 'b3f821e872c29b660f737b843f0a667e',
+  platformID: '7612486',
+  refuserid: '50037' }
+[2017-09-25 00:29:42.742] [INFO] normal - { sAccount: '13411367357',
+  sNickName: '未设置昵称',
+  sPassword: 'b3f821e872c29b660f737b843f0a667e',
+  iSex: 1,
+  sProvince: '',
+  sCity: '',
+  sSignature: '',
+  sEmail: '',
+  sHeadImage: '',
+  iPhoneAuth: 1,
+  lPlatformID: '7612486',
+  lPushManId: '50037',
+  sCode: '914535' }
+[2017-09-25 00:29:42.784] [INFO] normal - { iRet: -8, sMsg: '手机短信验证码不存在' }
+[2017-09-25 03:30:40.935] [ERROR] normal - 请求获取验证码超时
+[2017-09-25 03:30:40.939] [ERROR] normal - { Error: socket hang up
+    at createHangUpError (_http_client.js:254:15)
+    at TLSSocket.socketCloseListener (_http_client.js:286:23)
+    at emitOne (events.js:101:20)
+    at TLSSocket.emit (events.js:188:7)
+    at _handle.close (net.js:497:12)
+    at TCP.done [as _onclose] (_tls_wrap.js:332:7) code: 'ECONNRESET' }
+Error: socket hang up
+    at createHangUpError (_http_client.js:254:15)
+    at TLSSocket.socketCloseListener (_http_client.js:286:23)
+    at emitOne (events.js:101:20)
+    at TLSSocket.emit (events.js:188:7)
+    at _handle.close (net.js:497:12)
+    at TCP.done [as _onclose] (_tls_wrap.js:332:7)
+[2017-09-25 03:32:17.232] [ERROR] normal - 请求获取验证码超时
+[2017-09-25 03:32:17.233] [ERROR] normal - { Error: socket hang up
+    at createHangUpError (_http_client.js:254:15)
+    at TLSSocket.socketCloseListener (_http_client.js:286:23)
+    at emitOne (events.js:101:20)
+    at TLSSocket.emit (events.js:188:7)
+    at _handle.close (net.js:497:12)
+    at TCP.done [as _onclose] (_tls_wrap.js:332:7) code: 'ECONNRESET' }
+Error: socket hang up
+    at createHangUpError (_http_client.js:254:15)
+    at TLSSocket.socketCloseListener (_http_client.js:286:23)
+    at emitOne (events.js:101:20)
+    at TLSSocket.emit (events.js:188:7)
+    at _handle.close (net.js:497:12)
+    at TCP.done [as _onclose] (_tls_wrap.js:332:7)
+[2017-09-25 03:33:34.347] [ERROR] normal - 请求获取验证码超时
+[2017-09-25 03:33:34.349] [ERROR] normal - { Error: socket hang up
+    at createHangUpError (_http_client.js:254:15)
+    at TLSSocket.socketCloseListener (_http_client.js:286:23)
+    at emitOne (events.js:101:20)
+    at TLSSocket.emit (events.js:188:7)
+    at _handle.close (net.js:497:12)
+    at TCP.done [as _onclose] (_tls_wrap.js:332:7) code: 'ECONNRESET' }
+Error: socket hang up
+    at createHangUpError (_http_client.js:254:15)
+    at TLSSocket.socketCloseListener (_http_client.js:286:23)
+    at emitOne (events.js:101:20)
+    at TLSSocket.emit (events.js:188:7)
+    at _handle.close (net.js:497:12)
+    at TCP.done [as _onclose] (_tls_wrap.js:332:7)
+[2017-09-25 03:35:21.247] [ERROR] normal - 请求获取验证码超时
+[2017-09-25 03:35:21.248] [ERROR] normal - { Error: socket hang up
+    at createHangUpError (_http_client.js:254:15)
+    at TLSSocket.socketCloseListener (_http_client.js:286:23)
+    at emitOne (events.js:101:20)
+    at TLSSocket.emit (events.js:188:7)
+    at _handle.close (net.js:497:12)
+    at TCP.done [as _onclose] (_tls_wrap.js:332:7) code: 'ECONNRESET' }
+Error: socket hang up
+    at createHangUpError (_http_client.js:254:15)
+    at TLSSocket.socketCloseListener (_http_client.js:286:23)
+    at emitOne (events.js:101:20)
+    at TLSSocket.emit (events.js:188:7)
+    at _handle.close (net.js:497:12)
+    at TCP.done [as _onclose] (_tls_wrap.js:332:7)
+[2017-09-25 03:41:32.581] [ERROR] normal - 请求获取验证码连接异常

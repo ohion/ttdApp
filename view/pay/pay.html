@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>支付</title>
+    <link rel="stylesheet" href="css/pay.css">
+    <link rel="stylesheet" type="text/css" href="toast/toast.css" />
+    <script type="text/javascript" src="toast/toast.js"></script>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/pay.js"></script>
+</head>
+
+<body style="background: #E6E5EC;">
+    <div id="zf_phone" class="whiteArea paddingLeft top">
+        <img src="icon/zf_dhhm_icon_nor.png">电话号码
+        <input id="phoneNumber" type="tel" name="phoneNumber" placeholder="请输入电话号码">
+    </div>
+    <div class="padding tips" id="phoneTips">电话号码用于赠送消费所产生的购物币。购物币可在天天兑app上购物消费。</div>
+    <div id="shop" class="top whiteArea">
+        <div class="paddingLeft">
+            <div class="whiteArea" id="shopName">
+                <img src="icon/xf_sjmc_icon_nor.png">商家名称<span id="xf_sjmc">天天兑特约商家</span>
+            </div>
+            <div id="shopicon" class="whiteArea">
+                <img src="icon/xf_sjzh_icon_nor.png">商家账号<span id="xf_sjzh">zhuhai_007</span>
+            </div>
+        </div>
+    </div>
+    <div id="buy" class="top whiteArea">
+        <div class="paddingLeft">
+            <div class="whiteArea" id="howMoney">
+                <img src="icon/xf_fukuan_icon_nor.png">消费总金额
+                <input id="payMoney" type="number" name="payMoney" placeholder="请输入消费金额" />
+            </div>
+            <div id="buyicon" class="whiteArea">
+                <img src="icon/xf_bcytc_icon_nor.png">店家不参与推广提成
+                <input id="ignoreMoney" type="number" name="ignoreMoney" placeholder="请询问服务员">
+            </div>
+        </div>
+    </div>
+    <div id="remark" class="whiteArea top">
+        <input id="remarkInfo" type="text" name="remark" placeholder="输入备注信息">
+    </div>
+    <div class="top panddingTip">
+        <div class="fl" id="ignoreicon"><img src="icon/qb_zhuyi_butt_nor_2x.png"></div>
+        <div class="fr tips">
+            不参与推广提成金额：
+            <br/>1、此部分金额为商家无利润商品的交易额，如：饮食行业的特价菜式、香烟，其他行业的特价商品等。
+            <br/> 2、此部分交易额，付款客户获赠的对应购物币为0，各级推广者对应的推广收益为0。
+        </div>
+    </div>
+    <div class="clearfloat"></div>
+    <div class=" padding paybtn">
+        <div id="pay">付 款</div>
+    </div>
+    <!-- 验证码 -->
+    <div id="blackBg">
+        <div id="whiteBg">
+            <div class="codeTitle">输入验证码</div>
+            <div class="codeTips">首次使用天天兑，将自动完成注册天天兑。</div>
+            <div class="codePassword">默认登录密码为888888</div>
+            <div class="inputBoxContainer" id="inputBoxContainer">
+                <input type="text" class="realInput" />
+                <div class="bogusInput">
+                    <input type="tel" maxlength="6" disabled/>
+                    <input type="tel" maxlength="6" disabled/>
+                    <input type="tel" maxlength="6" disabled/>
+                    <input type="tel" maxlength="6" disabled/>
+                    <input type="tel" maxlength="6" disabled/>
+                    <input type="tel" maxlength="6" disabled/>
+                </div>
+            </div>
+            <div class="clearfix getCodeBox">
+                <div class="fl getCodeText">可再次获取验证码</div>
+                <div id="getCode" class="fr">获取验证码</div>
+            </div>
+            <div class="btnBox clearfix">
+                <div id="cancelBtn" class=" fl">取消</div>
+                <div id="verBtn" class="fr">立即验证</div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    (function() {
+        var container = document.getElementById("inputBoxContainer");
+        boxInput = {
+            maxLength: "",
+            realInput: "",
+            bogusInput: "",
+            bogusInputArr: "",
+            callback: "",
+            init: function(fun) {
+                var that = this;
+                this.callback = fun;
+                that.realInput = container.children[0];
+                that.bogusInput = container.children[1];
+                that.bogusInputArr = that.bogusInput.children;
+                that.maxLength = that.bogusInputArr[0].getAttribute("maxlength");
+                that.realInput.oninput = function() {
+                    that.setValue();
+                }
+                that.realInput.onpropertychange = function() {
+                    that.setValue();
+                }
+            },
+            setValue: function() {
+                this.realInput.value = this.realInput.value.replace(/\D/g, "");
+                console.log(this.realInput.value.replace(/\D/g, ""))
+                var real_str = this.realInput.value;
+                for (var i = 0; i < this.maxLength; i++) {
+                    this.bogusInputArr[i].value = real_str[i] ? real_str[i] : "";
+                }
+                if (real_str.length >= this.maxLength) {
+                    this.realInput.value = real_str.substring(0, 6);
+                    this.callback();
+                }
+            },
+            getBoxInputValue: function() {
+                var realValue = "";
+                for (var i in this.bogusInputArr) {
+                    if (!this.bogusInputArr[i].value) {
+                        break;
+                    }
+                    realValue += this.bogusInputArr[i].value;
+                }
+                return realValue;
+            }
+        }
+    })()
+    boxInput.init(function() {
+        getValue();
+    });
+
+
+     function getValue() {
+        boxInput.getBoxInputValue();
+     }
+    </script>
+</body>
+
+</html>

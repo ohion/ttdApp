@@ -1,0 +1,59 @@
+body{text-align: center;margin: 0;font-family: "Microsoft YaHei"}
+a{text-decoration: none;color: black;}
+.title-bar{
+    background-color: rgba(0, 23, 38, 0.95);
+    /*background-color: #001726;*/
+    height: 2.75em;
+    text-align: center;
+    color: white;
+    line-height: 2.75em;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+}
+.arrow-box{
+    float: left;
+    width: 2em;
+    left: 0;
+    position: absolute;
+}
+.arrow-box img{
+    width: 0.7em;
+    height: 1.3em;
+    margin-top: 0.7em;
+}
+.title{
+    font-size: 1.1em;
+}
+#tips-title{
+    color: #1c4191;
+    font-size: 1.6em;
+    margin-top: 2.75em;
+}
+#tips-content{
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+}
+#tips-content span{
+    color: #e74d43;
+}
+p{
+    text-indent: 2em;
+    margin: 0.5em 0;
+    color: #4367b5;
+}
+#ticket-box{
+    width: 5em;
+    margin: 1em auto;
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 0.5em;
+    padding: 1em;
+}
+#ticket-box img{
+    width: 2em;
+    height: 2em;
+    margin-bottom: 0.5em;
+}

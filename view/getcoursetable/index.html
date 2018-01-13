@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    
+    <title>My JSP 'index.jsp' starting page</title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
+	<style>
+		#beililogin,#beishilogin{
+			display: none;
+		}
+	</style>
+	
+	<script src="jquery-1.9.1.js"></script>
+    <script type="text/javascript">
+			$(document).ready(function(){
+				
+				var verifyPath = '';
+				var getVerify = function(url) {
+					console.log("获取验证码");
+					$.get(
+							url,
+							function(data,state) {
+								//verifyPath = data.split('=');
+								setTimeout(function(){
+									$("#icode").attr('src',data.verifyPath);
+								}, 5000);
+								$("#sessionId").attr('value',data.sessionId);
+								console.log(data.verifyPath);
+							}
+						);
+				}
+				$('#school').change(function() {
+					if($(this).val() == '1' || $(this).val() == '3' || $(this).val() == '4' || $(this).val() == '5' || $(this).val() == '6'){
+						//url = 'http://localhost:8080/Test/GetInf?action=2&school='+$(this).val();
+						url = 'http://localhost:8080/appbs/getVerify?school='+$(this).val();
+						getVerify(url);
+						console.log(url);
+						$('#beililogin').css('display','inline');
+						$('#beishilogin').css('display','none');
+					}else if($(this).val() == '2'){
+						$('#beililogin').css('display','none');
+						$('#beishilogin').css('display','inline');
+					}
+				});
+				//点击换一张事件
+				$("#reload").click(function() {
+						url = 'http://localhost:8080/appbs/getVerify?school='+$("#school").val();
+
+						getVerify(url);
+				});
+				//登录
+				$("#login").click(function(){
+					var txtUserName = $("#xh").val();
+					var TextBox2 = $("#password").val();
+					var sessionId = $("#sessionId").val();
+					var txtSecretCode = $("#txtSecretCode").val();
+					var school = $('#school').val();
+					var url = 'http://localhost:8080/appbs/login?stuNum='+txtUserName+'&password='+TextBox2+'&verify='+txtSecretCode+'&sessionId='+sessionId+'&school='+school;
+					$.post(
+							url,
+							function(data,state) {
+								console.log(data);
+								//data.result值,0-登录成功 1-登录失败 2-验证码错误 3-密码错误 4-用户名不存在
+								switch (data.result) {
+								case '0':
+									alert('登录成功！');
+									break;
+								case '1':
+									alert('登录失败，请重试！');
+									break;
+								case '2':
+									alert('验证码错误！');
+									break;
+								case '3':
+									alert('密码错误！');
+									break;
+								case '4':
+									alert('用户名不存在！');
+									break;
+								}
+							},
+							'json'
+						).error(function() {
+							alert('网络异常');
+						}); 
+				});
+				$("#login2").click(function(){
+					var TextBox1 = $("#xh2").val();
+					var TextBox2 = $("#password2").val();
+					var school = $('#school').val();
+					var url = 'http://localhost:8080/appbs/login?stuNum='+TextBox1+'&password='+TextBox2+'&school='+school;
+					$.post(
+							url,
+							function(data,state) {
+								switch (data.result) {
+									case '0':
+										alert('登录成功！');
+										$("#sessionId2").attr('value',data.sessionId);
+										break;
+									case '1':
+										alert('登录失败，请重试！');
+										break;
+									case '2':
+										alert('密码错误！');
+										break;
+								}
+							},
+							'json'
+						);
+				});
+				//查询
+				$("button").first().click(function(){
+					var school = $("#school").val();
+					var xnd = $("#xnd").val();
+					var xqd = $("#xqd").val();
+					var url = '';
+					if(school == '1' || school == '3' || school == '4'){
+						var txtUserName = $("#xh").val();
+						var TextBox2 = $("#password").val();
+						var sessionId = $("#sessionId").val();
+						url = 'http://localhost:8080/appbs/search?xnd='+xnd+'&xqd='+xqd+'&school='+school+'&stuNum='+txtUserName+'&password='+TextBox2+'&sessionId='+sessionId;
+					}else if(school == '2'){
+						var TextBox1 = $("#xh2").val();
+						var TextBox2 = $("#password2").val();
+						var sessionId2 = $("#sessionId2").val();
+						url = 'http://localhost:8080/appbs/search?xnd='+xnd+'&xqd='+xqd+'&school='+school+'&stuNum='+TextBox1+'&sessionId='+sessionId2;
+					}else if(school == '5'){
+						var xh = $("#xh").val();
+						var sessionId = $("#sessionId").val();
+						url = 'http://localhost:8080/appbs/search?xnd='+xnd+'&xqd='+xqd+'&school='+school+'&sessionId='+sessionId+'&stuNum='+xh;
+					}
+					console.log(url);
+					$.post(
+						url,
+						function(data,state){
+							$("#courseTable").html(data.courseTable);
+						}
+					).error(function(){
+						alert("无此服务！");
+					});
+				});
+				//导入
+				$("button").eq(1).click(function(){
+					var school = $("#school").val();
+					var xnd = $("#xnd").val();
+					var xqd = $("#xqd").val();
+					var url = 'http://localhost:8080/Test/GetInf?xnd='+xnd+'&xqd='+xqd+'&action=1'+'&school='+school;
+					console.log(url);
+					$.post(
+						url,
+						function(data,state){
+							alert(data);
+						}
+					).error(function(){
+						alert("无此服务！");
+					});
+				});
+			});
+	</script>
+  </head>
+  
+  <body>
+  	<div id="beililogin">
+	  	<input type="text" id="xh" placeholder="请输入学号"><br>
+	  	<input type="password" id="password" placeholder="请输入密码"><br>
+	  	<input type="text" id="txtSecretCode" placeholder="请输入验证码"><span id="imgbox">
+	  	<img id="icode" src="" style="position: absolute;"></span><input type="button" id="reload" value="换一张" style="position: absolute;left: 21%;"><br>
+	  	<input type="text" id="sessionId"><br>
+	  	<input type="button" id="login" value="登录">
+  	</div>
+  	<div id="beishilogin">
+	  	<input type="text" id="xh2" placeholder="请输入学号"><br>
+	  	<input type="password" id="password2" placeholder="请输入密码"><br>
+	  	<input type="text" id="sessionId2"><br>
+	  	<input type="button" id="login2" value="登录">
+  	</div>
+  	
+  	<hr>
+		北师:1312030006 密码:cmh624  吉珠:03120214 密码:aaa123456 城职:20141202050 密码:440421199410049146 暨大:2012050824 密码:yuying
+  	<hr>
+  	
+    <select id="school">
+    	<option value="">=请选择学校=</option>
+    	<option value="1">北理工</option>
+    	<option value="2">北师大</option>
+    	<option value="3">吉林大学珠海学院</option>
+    	<option value="4">珠海城市职业技术学院</option>
+    	<option value="5">暨南大学珠海校区</option>
+    	<option value="6">遵义医学院珠海校区</option>
+    </select>
+    <select id="xnd">
+     	<option value="2012-2013">2012-2013</option>
+    	<option value="2013-2014">2013-2014</option>
+    	<option value="2014-2015">2014-2015</option>
+    	<option value="2015-2016">2015-2016</option> 
+    </select>
+    <select id="xqd">
+     	<option value="1">1</option>
+    	<option value="2">2</option>
+    	<option value="3">3</option> 
+    </select>
+    <button>查询课表</button>
+    <button>导入课表</button>
+
+    <div id="courseTable" style="width: 100%;height: auto;background-color: #eee;margin: 20px;">
+    
+    </div>
+  </body>
+</html>

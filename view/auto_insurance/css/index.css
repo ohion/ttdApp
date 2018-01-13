@@ -1,0 +1,188 @@
+body{margin: 0;font-family: "Microsoft YaHei"}
+.title-bar{
+    background-color: rgba(0, 23, 38, 0.95);
+    /*background-color: #001726;*/
+    height: 2.75em;
+    text-align: center;
+    color: white;
+    line-height: 2.75em;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+}
+.arrow-box{
+    float: left;
+    width: 2em;
+    left: 0;
+    position: absolute;
+}
+.arrow-box img{
+    width: 0.7em;
+    height: 1.3em;
+    margin-top: 0.7em;
+}
+.title{
+    font-size: 1.1em;
+}
+.part1-top{
+    margin-top: 2.75em;
+    padding: 30%;
+    background-size: 100% 100%;
+    background-image: url(../images/part1-top.png);
+}
+.part1-bottom{
+    height: 19em;
+    padding: 5% 1% 0 1%;
+}
+.part1-bottom-p1{
+    font-size: 0.5em;
+    width: 100%;
+    color: #828383;
+}
+.part1-bottom-p2{
+    font-size: 1em;
+    margin-top: 0;
+    color: #0076c6;
+}
+.part1-bottom-top{
+    width: 80%;margin: 0 auto;
+}
+.part1-bottom-star{
+    width: 8.5em;
+    height: 1.2em;
+}
+/*取消聚焦样式*/
+input[type="tel"]:focus{
+    outline:none;
+}
+input{
+    border: 0;
+    border-radius: 1em;
+    height: 2.6em;
+    width: 42%;
+    background-image: url(../images/border.png);
+    background-size: 100% 100%;
+    padding: 0.5em;
+}
+.part1-bottom-inputbox,.part1-bottom-btn{text-align: center}
+.part1-bottom-btn{margin-top: 0.6em;}
+.part1-bottom-btn div{
+    margin: 0 auto;
+    width: 45%;
+    height: 2.6em;
+    line-height: 2.6em;
+    background-image: url(../images/btn.png);
+    background-size: 100% 100%;
+    color: white;
+    cursor: pointer;
+}
+.part1-bottom-btn span{
+    font-size: 1.3em;
+}
+/*理赔特色*/
+.part-titles{
+    height: 2em;
+}
+.part-titles-left,.part-titles-center,.part-titles-right{background-color: #0081d6;height: 100%;}
+.part-titles-left{
+    width: 2.5%;
+    float: left;
+}
+.part-titles-center{
+    width: 93%;
+    margin-left: 1%;
+    margin-right: 0.5%;
+    float: left;
+    font-size: 1.3em;
+    color: white;
+}
+.part2-title-center img,.part3-title-center img{
+    margin-left: 0.5em;
+    height: 65%;
+    margin-top: 0.2em;
+}
+.part2-title-center img{width: 5em;}
+.part3-title-center img{width: 11em;}
+.part-titles-right{
+    width: 3%;
+    float: right;
+}
+
+.part2-content{
+    height: 7em;
+    color: #2d5998;
+}
+.part2-content-con{
+    height: 5em;padding-top: 2em;
+}
+.part2-content b,.part2-content span{color: #0f458c;}
+.part2-content-even{background-color: #e9f3ff;}
+.part2-contents{text-align: center;float: left;height: 100%;}
+.part2-content-odd-left{
+    width: 30%;
+    font-size: 1.8em;
+}
+.part2-content-odd-center,.part2-content-even-center{
+    font-size: 0.5em;
+    text-align: left;
+}
+.part2-content-odd-center{
+    width: 40%;
+}
+.part2-content-odd-center span,.part2-content-even-center span{font-size: 1.5em !important;}
+.part2-content-odd-right,.part2-content-even-left{
+    width: 30%;
+}
+.part2-content-odd-right img,.part2-content-even-left img{width: 3.3em;height: 3.2em;margin-top: -0.5em;}
+
+.part2-content-even-center{
+    width: 45%;
+}
+.part2-content-even-right{
+    width: 20%;
+    font-size: 1.8em;
+}
+
+.part3{background-color: #e9f3ff;overflow-y: hidden;}
+.shopcoin-product-box{
+    margin: 0 auto;
+    width: 85%;
+    text-align: center;
+    overflow-y: hidden;
+}
+.product-box-title{
+    color: #00a2e9;
+    font-size: 1em;
+    margin-top: 0;
+    padding-top: 1em;}
+.product{
+    width: 33.33%;
+    float: left;
+}
+.product-more{
+    height: 8.5em;
+}
+.product-simple{
+    height: 7em;
+}
+.product-img{
+    width: 5em;height: 5em;
+}
+.product-p-box{
+    width: 8em;
+    margin: 0 auto;
+    font-size: 0.7em;
+    color: #73caf4;
+}
+.product-p-box p{
+    margin: 0;
+}
+.bottom{
+    text-align: center;
+    color: #00a2e9;
+}
+.bottom div{
+    margin-top: 2em;
+    margin-bottom: 4em;
+}

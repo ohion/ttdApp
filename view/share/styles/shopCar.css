@@ -1,0 +1,139 @@
+#shopCar {
+    width: 100%;
+    height: 52px;
+    line-height: 52px;
+    text-align: center;
+    background: #FFD006;
+    position: fixed;
+    bottom: 0;
+    cursor: pointer;
+}
+
+#shopCar img {
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+}
+
+
+#shopCar a{
+    text-decoration: none;
+    color: #000;
+    vertical-align: middle;
+}
+
+/*  <!-- 是否注册过天天兑弹出框样式 --> */
+
+
+/* #putwayDialog {
+    position: fixed;
+    z-index: 999;
+    left: 20%;
+    top: 20%;
+    background-clip: padding-box;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 6px 6px 6px 6px;
+    -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    outline: medium none;
+    z-index: 1050;
+    display: none;
+}
+
+#putwayDialog input[type='button'] {
+    height: 35px;
+    width: 97px;
+    box-shadow: none;
+    font-family: "微软雅黑";
+    font-size: 15px;
+    margin-bottom: 35px;
+}
+
+.tipsTxt {
+    font-family: '微软雅黑';
+    font-size: 18px;
+    color: #616161;
+    text-align: center;
+    margin: 26px auto 45px;
+}
+
+#putwayDialog .paddingleft {
+    padding-left: 0;
+    text-align: center;
+    font-size: 18px;
+    color: #616161;
+    padding-left: 34px;
+    font-family: '微软雅黑'
+}
+
+.btn {
+    margin-right: 24px;
+    cursor: pointer;
+    padding: 6px 20px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 2px;
+    font-family: "微软雅黑";
+    font-size: 15px;
+}
+
+.btnYellow {
+    background-color: #ffcf04;
+    color: #fff;
+    border: 1px solid #ffcf04;
+} */
+
+
+/*提示样式*/
+
+#shadowTips {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    z-index: 999999999;
+}
+
+.shadowTips_top {
+    width: 100%;
+    height: 2%;
+}
+
+.shadowTips_mid {
+    width: 100%;
+    height: 20%;
+}
+
+.shadowTips_mid_left {
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding-left: 5%;
+    text-align: left;
+}
+
+.shadowTips_mid_right {
+    float: right;
+    width: 45%;
+    height: 100%;
+    text-align: right;
+}
+
+.shadowTips_bottom_tipsone,
+.shadowTips_bottom_tipstwo {
+    width: 100%;
+    height: 10%;
+    font-size: 20px;
+    padding-left: 0%;
+}
+
+.shadowTips_bottom_tipsone img {
+    border-radius: 10px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    	<link rel="stylesheet" href="css/toast.css">
+    	<style>
+    		body{margin: 0;}
+    		table{
+    			display: none;
+    			margin-top: 1em;
+    		}
+    	</style>
+    </head>
+    <body style="text-align: center;" ontouchstart>
+    	<h3>依据时间段搜索车险预约列表</h3>
+    	<h5>温馨提示:IE、火狐浏览器暂不支持日期控件</h5>
+    	起始时间：<input type="date" id="startTime"/><br>
+    	结束时间：<input type="date" id="endTime"/><br>
+    	<button onclick="search()" style="width: 10em;margin-top: 2em;height: 3em;">搜索</button>
+    	<table border="1" align="center">
+    		<caption><h3>搜索结果</h3></caption>
+    		<tr style="background-color: gray;color: white;">
+    			<td>手机号码</td>
+    			<td>预约时间</td>
+    		</tr>
+    	</table>
+        <div id="shadow">
+        	<div id="toast">
+        		<!-- <img src="images/wait.gif"> -->
+        		<!-- <p>处理中...</p> -->
+        	</div>
+        </div>
+        <script src="../common/jquery-2.1.4.min.js"></script>
+        <script src="js/toast.js"></script>
+        <script src="js/list.js"></script>
+    </body>
+</html>

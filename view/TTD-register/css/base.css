@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #E6E5EC;
+    font-size: 13px;
+}
+
+.form {
+    width: 82%;
+    margin: 0 auto;
+    padding-top: 14px;
+}
+
+
+.form-body {
+    padding: 0px 40px;
+    color: #222;
+    background: #FFFFFF;
+    box-shadow: 0 4px 0 0 #C7C7C7;
+    border-radius: 20px;
+}
+
+.form-body span {
+    display: block;
+    padding-top: 20px;
+    opacity: 0.6;
+    font-size: 13px;
+    color: #1C1C1C;
+}
+
+.ui-input {
+    position: relative;
+    border-bottom: 1px solid #D8D8D8;
+    font-size: 0;
+    padding: 5px 0 10px 0;
+    text-align: center;
+}
+
+.ui-input input {
+    width: 100%;
+    height: 30px;
+    border: 0;
+    font-size: 14px;
+    outline: none;
+}
+
+.form .narrow-input {
+    display: table;
+    width: 100%;
+}
+
+.form .narrow-input input:first-child {
+    width: 45%;
+    margin-right: 10px;
+    float: left;
+}
+
+.form .sms-button {
+    display: inline-block;
+    float: right;
+    width: 45%;
+    max-width: 100px;
+    font-size: 13px;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+    background: #FFD006;
+    border-radius: 33px;
+    border: none;
+    padding: 6px 0;
+}
+
+.form .ui-button {
+    width: 100%;
+    margin: 40px 0 20px;
+}
+
+.ui-button-primary {
+    color: #fff;
+    background: #FF4848;
+    border-radius: 44px;
+    box-shadow: 0px 2px 30px #FF4848;
+}
+
+.ui-button {
+    height: 40px;
+    border: 0;
+    font-size: 18px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+input:-moz-placeholder {
+    opacity: 0.3;
+    font-size: 15px;
+    color: #1C1C1C;
+}
+
+input::-webkit-input-placeholder {
+    opacity: 0.3;
+    font-size: 15px;
+    color: #1C1C1C;
+}
+
+input:-ms-input-placeholder {
+    opacity: 0.3;
+    font-size: 15px;
+    color: #1C1C1C;
+}
+
+.default-pwd {
+    margin: auto;
+    text-align: center;
+    padding-bottom: 20px;
+    opacity: 0.6;
+    font-size: 15px;
+    color: #18253D;
+}
+
+#agreement {
+    margin-top: 20px;
+}
+
+#agreement div {
+    text-indent: 25px;
+}
+
+#agreement img {
+    width: 21px;
+    position: absolute;
+    margin-top: 1px;
+    margin-left: -25px;
+}
+
+.btn {
+    padding: 0 40px;
+    /*display: none;*/
+}
+
+#downloadBtn {
+
+    height: 40px;
+    border: 0;
+    font-size: 18px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 44px;
+    background: #FFD006;
+    width: 100%;
+    margin: 40px 0 20px;
+}
