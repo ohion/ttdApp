@@ -1,0 +1,1 @@
+{"dependencies":[],"generated":{"js":"\"use strict\";Object.defineProperty(exports,\"__esModule\",{value:!0});var e={shopServer:\"appbs.tymshop.com:8088\",nearshopService:\"120.25.129.101:2314\",voteService:\"shop.tymplus.com:3314\"};exports.default=e;"},"hash":"2a663903a4bbddd22697579c261d7c85"}
